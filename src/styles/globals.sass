@@ -1,0 +1,25 @@
+@import Variables.sass
+
+@tailwind base
+@tailwind components
+@tailwind utilities
+
+body
+  background-color: $color-white
+
+.mobile-component
+  display: none
+
+@media screen and (max-width: $screen-md-768px)
+
+  body
+    width: 88%
+    margin: 0 auto
+
+  .desktop-component
+    display: none
+
+  .mobile-component
+    display: unset
+
+@media screen and (max-width: 640px)
