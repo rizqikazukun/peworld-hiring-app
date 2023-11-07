@@ -19,11 +19,12 @@ export default function Home() {
           Home | Peworld
         </title>
       </Head>
+      
       <Navbar/>
+
       <header className='container mx-auto'>
-        <h1>
-          Hello
-        </h1>
+      
+        
         
       </header>
 

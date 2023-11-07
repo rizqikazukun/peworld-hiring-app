@@ -2,9 +2,9 @@
 
 nav
 	position: fixed
-	width: 84vw
+	width: 100vw
 	top: 0
-	left: 7.5vw
+	left: 0
 	background-color: $color-white
 
 #nav-logo
@@ -30,7 +30,11 @@ nav
 .menu-button
 	color: $color-black
 	background-color: $color-white
-	
+
 .menu-button img
 	filter: invert(32%) sepia(11%) saturate(2737%) hue-rotate(210deg) brightness(100%) contrast(91%)
 
+@media screen and (max-width: $screen-md-768px)
+
+	.Navbar-content
+		padding: 0px 2vw 0px 2vw
