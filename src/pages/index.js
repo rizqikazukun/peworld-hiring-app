@@ -12,16 +12,19 @@ export default function Home() {
   }, [])
 
   return (
-    <div className={openSans.className}>
+    <div id='page-home' className={openSans.className}>
 
       <Head>
         <title>
           Home | Peworld
         </title>
       </Head>
-
-      <header>
-        <Navbar/>
+      <Navbar/>
+      <header className='container mx-auto'>
+        <h1>
+          Hello
+        </h1>
+        
       </header>
 
       <main>
