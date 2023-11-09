@@ -16,15 +16,15 @@ export default function Navbar() {
 
 				<div id='nav-item-right' className='flex flex-row gap-2 items-center'>
 
-					<button className='login-button h-10 desktop-component'>
+					<button className='login-button h-10 max-desktop:hidden hover:bg-pw-white-hover'>
 						Login
 					</button>
 
-					<button className='register-button h-10 desktop-component'>
+					<button className='register-button h-10 max-desktop:hidden hover:bg-pw-purple-hover'>
 						Login
 					</button>
 
-					<button className='menu-button flex h-10 mobile-component' style={{ width: '40px', height: '40px', minWidth: '40px' }}>
+					<button className='hidden menu-button h-10 max-desktop:flex' style={{ width: '40px', height: '40px', minWidth: '40px' }}>
 						<img className=' m-auto' src="/burger-menu.svg" alt="menu" style={{ width: '100%' }} />
 					</button>
 
