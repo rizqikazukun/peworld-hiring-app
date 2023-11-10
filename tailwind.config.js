@@ -10,12 +10,13 @@ module.exports = {
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))'
       },
       colors: {
         'pw-purple': '#5E50A1',
         'pw-purple-hover' : '#483b84',
-        'pw-orange': '#FBB017',
+        'pw-orange': '#ff9b00',
+        'pw-orange-hover': '#da8e1a',
         'pw-gray60': '#46505C',
         'pw-gray40': '#9EA0A5',
         'pw-gray20': '#E2E5ED',

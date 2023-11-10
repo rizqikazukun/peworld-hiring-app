@@ -4,7 +4,7 @@ import React from 'react'
 
 export default function Navbar() {
 	return (
-		<div id='Navbar' className='container mx-auto'>
+		<div id='Navbar' className='container mx-auto z-[9999]'>
 			<div className='Navbar-content container mx-auto flex flex-row justify-between my-5'>
 
 				<div id='nav-item-left'>
@@ -21,7 +21,7 @@ export default function Navbar() {
 					</button>
 
 					<button className='register-button h-10 max-desktop:hidden hover:bg-pw-purple-hover'>
-						Login
+						Register
 					</button>
 
 					<button className='hidden menu-button h-10 max-desktop:flex' style={{ width: '40px', height: '40px', minWidth: '40px' }}>
