@@ -39,13 +39,13 @@ export default function Home() {
 
       <Navbar />
 
-      <main className='container mx-auto lg: mt-[12vh] max-sm:w-[88%]'>
+      <main className='container mx-auto lg:mt-[12vh] max-sm:w-[88%]'>
 
         {/* hero section */}
-        <section id='hero-section' className='scroll-helper flex justify-evenly mb-[5vh] flex-wrap max-sm:h-[80vh] h-[100vh] max-sm:mt-[0px] mt-[-117px]'>
+        <section id='hero-section' className='scroll-helper grid grid-cols-2 max-md:grid-cols-1 my-20 mt-36 '>
 
-          <div className='flex items-center max-lg:items-start w-[40vh]'>
-            <div>
+          <div className='flex items-center justify-self-center max-lg:items-center w-[40vh]'>
+            <div className=''>
               <h1 className='max-sm:text-[5.5vw] max-md:text-[5vw] text-[33px] font-bold'>
                 Talenta terbaik negri untuk perubahan revolusi 4.0
               </h1>
@@ -62,7 +62,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div id='bannerImage' className='flex w-[70vh] max-lg:order-first max-lg:items-end max-lg:justify-center items-center'>
+          <div id='bannerImage' className='flex w-[80%] max-lg:items-end max-sm:order-first items-center justify-self-center'>
             <img src='/assets/images/banner.png' alt='banner'></img>
           </div>
 
@@ -70,9 +70,9 @@ export default function Home() {
         {/* End of hero section */}
 
         {/* Section 2 */}
-        <section id='banner-2' className='scroll-helper flex justify-evenly mb-[6vh] flex-wrap h-[100vh]'>
+        <section id='banner-2' className='scroll-helper grid grid-cols-2 max-md:grid-cols-1 my-20'>
 
-          <div className='flex max-lg:items-start items-center w-[40vh]'>
+          <div className='flex max-lg:items-start items-center justify-self-center w-[40vh]'>
             <div>
               <h2>
                 <p className='max-sm:text-[5.5vw] max-md:text-[5vw] text-[33px] font-bold max-lg:leading-loose leading-relaxed'>
@@ -111,7 +111,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div id='bannerImage' className='flex w-[70vh] max-lg:items-end order-first items-center max-lg:justify-center'>
+          <div id='bannerImage' className='flex w-[80%] max-lg:items-end order-first items-center justify-self-center'>
             <img src='/assets/images/banner_2.png' alt='banner_2'></img>
           </div>
 
@@ -119,9 +119,9 @@ export default function Home() {
         {/* End of Section 2 */}
 
         {/* Section 3 */}
-        <section id='banner-3' className='scroll-helper flex justify-evenly mb-[6vh] flex-wrap  h-[100vh]'>
+        <section id='banner-3' className='scroll-helper grid grid-cols-2 max-md:grid-cols-1 my-20'>
 
-          <div className='flex max-lg:items-start items-center w-[40vh]'>
+          <div className='flex max-lg:items-start items-center justify-self-center w-[40vh]'>
             <div>
               <h2 className='max-sm:text-[5.5vw] max-md:text-[5vw] text-[33px] font-bold'>
                 Skill Tallent
@@ -159,7 +159,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div id='bannerImage' className='flex w-[70vh] max-lg:items-end items-center max-lg:order-first max-lg:justify-center'>
+          <div id='bannerImage' className='flex w-[80%] max-lg:items-end order-first items-center justify-self-center'>
             <img src='/assets/images/banner_3.png' alt='banner_3' />
           </div>
 
