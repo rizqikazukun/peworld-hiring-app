@@ -5,7 +5,7 @@ import React from 'react'
 export default function Footer() {
 	return (
 		<div id='Footer' className=' bg-pw-purple'>
-			<div className='container m-auto pt-10 max-sm:px-10'>
+			<div className='container m-auto px-8 py-4 max-sm:px-10'>
 				<div className='my-2 flex max-sm:justify-center'>
 					<img src="/peworld-white-wo-bg.svg" className='h-[50px]' alt="logo" />
 				</div>
