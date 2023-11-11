@@ -20,6 +20,7 @@ module.exports = {
         'pw-gray60': '#46505C',
         'pw-gray40': '#9EA0A5',
         'pw-gray20': '#E2E5ED',
+        'pw-gray10': '#eaeaea',
         'pw-gray5': '#F6F7F8',
         'pw-white': '#F6F7F8',
         'pw-white-hover' : '#ebebeb',

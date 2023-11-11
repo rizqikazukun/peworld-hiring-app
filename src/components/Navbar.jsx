@@ -1,16 +1,29 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from 'next/link'
 import React from 'react'
 
 
 export default function Navbar() {
 	return (
 		<div id='Navbar' className='container mx-auto z-[9999]'>
-			<div className='Navbar-content container flex flex-row justify-between px-8 py-4 m-2 mx-auto'>
+			<div className='Navbar-content container flex flex-row justify-between px-8 py-3 max-md:m-2 mx-auto'>
 
-				<div id='nav-item-left'>
-					<div id='nav-logo' className='flex justify-center' style={{ width: '160px', minWidth: '160px' }}>
-						<img src="/peworld-purple-wo-bg.svg" className='w-full px-1' alt="logo" />
-					</div>
+				<div id='nav-item-left' className='flex items-center gap-10'>
+					<Link href="/">
+						<div id='nav-logo' className='flex justify-center' style={{ width: '160px', minWidth: '160px' }}>
+
+							<img src="/peworld-purple-wo-bg.svg" className='w-full px-1' alt="logo" />
+						</div>
+					</Link>
+
+					<Link href="/talents">
+						<p className=' text-pw-black font-medium'>
+							Talent List
+						</p>
+					</Link>
+
+
+
 
 				</div>
 

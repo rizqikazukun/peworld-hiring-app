@@ -12,7 +12,7 @@ export default function Footer() {
 				<div className='my-4'>
 					<p className='text-white max-sm:text-center'>
 						Peworld, hiring application. <br />
-						Recruiter and Job Seeker.
+						For Recruiter and Job Seeker.
 					</p>
 				</div>
 				<hr className=' border-[1px]' />
@@ -20,7 +20,7 @@ export default function Footer() {
 
 					<div>
 						<p className='text-white max-sm:my-2 max-sm:text-center'>
-							2020 Pewworld. All right reserved
+							2023 Peworld. All right reserved
 						</p>
 					</div>
 
