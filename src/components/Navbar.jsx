@@ -9,7 +9,7 @@ export default function Navbar() {
 
 				<div id='nav-item-left'>
 					<div id='nav-logo' className='flex justify-center' style={{ width: '160px', minWidth: '160px' }}>
-						<img src="/logo-purple.svg" className='w-full px-1' alt="logo" />
+						<img src="/peworld-purple-wo-bg.svg" className='w-full px-1' alt="logo" />
 					</div>
 
 				</div>
