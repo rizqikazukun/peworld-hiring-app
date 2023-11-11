@@ -44,7 +44,7 @@ export default function Home() {
         {/* hero section */}
         <section id='hero-section' className='scroll-helper grid grid-cols-2 max-md:grid-cols-1 my-20 mt-36 '>
 
-          <div className='flex items-center justify-self-center max-lg:items-center w-[40vh]'>
+          <div className='flex items-center justify-self-center max-lg:items-center max-w-[40vh]'>
             <div className=''>
               <h1 className='max-sm:text-[5.5vw] max-md:text-[5vw] text-[33px] font-bold'>
                 Talenta terbaik negri untuk perubahan revolusi 4.0
@@ -72,7 +72,7 @@ export default function Home() {
         {/* Section 2 */}
         <section id='banner-2' className='scroll-helper grid grid-cols-2 max-md:grid-cols-1 my-20'>
 
-          <div className='flex max-lg:items-start items-center justify-self-center w-[40vh]'>
+          <div className='flex max-lg:items-start items-center justify-self-center max-w-[40vh]'>
             <div>
               <h2>
                 <p className='max-sm:text-[5.5vw] max-md:text-[5vw] text-[33px] font-bold max-lg:leading-loose leading-relaxed'>
@@ -121,7 +121,7 @@ export default function Home() {
         {/* Section 3 */}
         <section id='banner-3' className='scroll-helper grid grid-cols-2 max-md:grid-cols-1 my-20'>
 
-          <div className='flex max-lg:items-start items-center justify-self-center w-[40vh]'>
+          <div className='flex max-lg:items-start items-center justify-self-center max-w-[40vh]'>
             <div>
               <h2 className='max-sm:text-[5.5vw] max-md:text-[5vw] text-[33px] font-bold'>
                 Skill Tallent
@@ -159,7 +159,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div id='bannerImage' className='flex w-[80%] max-lg:items-end order-first items-center justify-self-center'>
+          <div id='bannerImage' className='flex w-[80%] max-lg:items-end max-lg:order-first items-center justify-self-center'>
             <img src='/assets/images/banner_3.png' alt='banner_3' />
           </div>
 
