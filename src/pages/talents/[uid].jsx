@@ -32,21 +32,25 @@ export default function TalentDetail(props) {
 			</div>
 
 			<div className='container mx-auto grid grid-cols-6 mt-14 mb-10'>
-				<div className='max-lg:col-span-6 col-span-2 bg-white p-10 m-5 rounded-xl shadow-xl z-10 flex flex-col gap-5'>
-					<img src={detail?.photo} alt={detail?.last_name} className='w-[200px] h-[200px] object-cover object-top rounded-full self-center shadow-xl' />
-					<div>
-						<p>{`${detail?.first_name} ${detail?.last_name}`}</p>
-						<p>{detail?.job_title}</p>
+
+				<div className='max-lg:col-span-6 col-span-2 bg-white p-10 m-5 rounded-xl shadow-xl z-10 flex flex-col gap-8'>
+
+					<img id='talent-photo' src={detail?.photo} alt={detail?.last_name} className='w-[200px] h-[200px] object-cover object-top rounded-full self-center shadow-xl' />
+
+					<div id='talent-info' className='flex flex-col gap-2'>
+						<p className='font-semibold  text-xl'>{`${detail?.first_name} ${detail?.last_name}`}</p>
+						<p className='text-sm text-pw-gray60'>{detail?.job_title}</p>
+						<p className='text-sm text-pw-gray60'>{detail?.job_time_preferece}</p>
 						<p className='text-sm text-pw-gray60'> <img className='inline my-[-1px]' src="/assets/icons/location.svg" alt="icon location" /> {detail?.location}</p>
-						<p>{detail?.job_time_preferece}</p>
-						<p>{detail?.sort_description}</p>
+						<p className='text-sm text-pw-gray60 max-sm:text-justify'>{detail?.sort_description}</p>
 					</div>
-					<button className='bg-pw-purple hover:bg-pw-purple-hover text-white rounded font-medium py-2 shadow-md'>
+
+					<button id='button-hire' className='bg-pw-purple hover:bg-pw-purple-hover text-white rounded font-semibold py-2 shadow-md'>
 						Hire
 					</button>
 
-					<div className='flex flex-col gap-3'>
-						<p>Skills</p>
+					<div id='talent-skills' className='flex flex-col gap-2'>
+						<h3 className='font-semibold  text-xl'>Skills</h3>
 						<div className='flex flex-wrap gap-2 text-white'>
 							{
 								detail?.skills?.map((skill, index) => (
@@ -57,34 +61,34 @@ export default function TalentDetail(props) {
 							}
 						</div>
 					</div>
-					<div className='flex flex-col gap-2'>
-						<h3>Contact</h3>
+
+					<div id='talent-contact' className='flex flex-col gap-2'>
+
+						<h3 className='font-semibold  text-xl'>Contact</h3>
 						{
 							detail.social === undefined ? "" : Object.entries(detail.social).map((item, index) => {
+
 								const [key, value] = item
 
 								let Lable
 								if (key === 'instagram') {
-									Lable = <span><img className=' inline' src="/assets/icons/instagram.svg" alt="instagram" /> Instagram </span>
+									Lable = <span><img className='inline h-[20px]' src="/assets/icons/instagram.svg" alt="instagram" /> Instagram </span>
 								} else if (key === 'github') {
-									Lable = <span><img className=' inline' src="/assets/icons/github.svg" alt="github" /> Github </span>
+									Lable = <span><img className='inline h-[20px]' src="/assets/icons/github.svg" alt="github" /> Github </span>
 								} else if (key === 'gitlab') {
-									Lable = <span><img className=' inline' src="/assets/icons/gitlab.svg" alt="gitlab" /> Gitlab </span>
+									Lable = <span><img className='inline h-[20px]' src="/assets/icons/gitlab.svg" alt="gitlab" /> Gitlab </span>
 								} else if (key === 'email') {
-									Lable = <span><img className=' inline' src="/assets/icons/email.svg" alt="email" /> Email </span>
+									Lable = <span><img className='inline h-[20px]' src="/assets/icons/email.svg" alt="email" /> Email </span>
 								} else {
-									Lable = <span><img className=' inline' src="/assets/icons/other.svg" alt={key} /> {key} </span>
+									Lable = <span><img className='inline h-[20px]' src="/assets/icons/other.svg" alt={key} /> {key} </span>
 								}
 
 								return (
-									<p key={index}>{Lable}{`: ${value} `}</p>
+									<p key={index} className='text-sm text-pw-gray60'>{Lable}{`: ${value} `}</p>
 								)
 							})
 						}
-
 					</div>
-
-
 
 				</div>
 

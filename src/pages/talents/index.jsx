@@ -61,12 +61,16 @@ export default function TalentList(props) {
 							listTalent?.map((talent, index) => {
 								return (
 									<div key={index} className='grid max-lg:grid-cols-3 grid-cols-4 col-span-2 p-5 bg-white shadow-md rounded-lg m-2'>
-										<div className='col-span-1 flex max-sm:items-center'>
+
+										{/* talent-list-photo */}
+										<div className='col-span-1 flex items-center'>
 											<img className='max-sm:h-[160px] h-[100%] w-[100%] object-cover object-top rounded-md aspect-square shadow-md'
 												src={talent.photo} alt={`photo ${talent.last_name}`} />
 										</div>
-										<div className='max-lg:col-span-2 col-span-3 p-5 h-fit flex flex-col gap-[5px]'>
-											<p className=' font-semibold  text-xl'>{`${talent?.first_name} ${talent?.last_name}`}</p>
+
+										{/* Talent List info */}
+										<div className='max-lg:col-span-2 col-span-3 p-5 h-fit flex flex-col max-lg:gap-1 lg:gap-2'>
+											<p className='font-semibold  text-xl'>{`${talent?.first_name} ${talent?.last_name}`}</p>
 											<p className='text-sm text-pw-gray60'>{talent?.job_title}</p>
 											<p className='text-sm text-pw-gray60'> <img className='inline my-[-1px]' src="/assets/icons/location.svg" alt="icon location" /> {talent?.location}</p>
 											<div className='flex flex-wrap gap-2 text-white'>{talent?.skills?.map((skill, index) => (
@@ -76,7 +80,7 @@ export default function TalentList(props) {
 											</div>
 
 											<p>Action :</p>
-											<Link href={`talents/${talent.user_uid}`}>
+											<Link className=' w-fit' href={`talents/${talent.user_uid}`}>
 												<button className='bg-pw-purple hover:bg-pw-purple-hover text-white rounded font-medium py-2 px-3 shadow'>
 													Lihat Detail
 												</button>

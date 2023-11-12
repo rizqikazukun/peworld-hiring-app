@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { Poppins } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import Link from 'next/link'
 
 const poppins = Poppins({ subsets: ['latin'], weight: '400' })
 
@@ -49,17 +50,23 @@ export default function Home() {
               <h1 className='max-sm:text-[5.5vw] max-md:text-[5vw] text-[33px] font-bold'>
                 Talenta terbaik negri untuk perubahan revolusi 4.0
               </h1>
-              <p className='my-5'>Recruit talenta terbaik sesuai dengan kebutuhan industri.</p>
+              <p className='my-5'>
+                Untuk Recruiter, Recruit talenta terbaik sesuai dengan kebutuhan industri.
+                Untuk Talent, ayo bergabung dan menjadi yang talenta terbaik bagi negeri.
+              </p>
               <div className='flex gap-2'>
-                <button className='rounded-md  font-bold p-3 bg-pw-orange hover:bg-pw-orange-hover text-pw-white'>
-                  Mulai Sekarang
-                </button>
+
+                <Link href='/talents'>
+                  <button className='rounded-md  font-bold p-3 bg-pw-orange hover:bg-pw-orange-hover text-pw-white'>
+                    Mulai Sekarang
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
 
           <div id='bannerImage' className='flex max-lg:items-end max-md:order-first items-center justify-center'>
-            <img src='/assets/images/banner.png'alt='banner'></img>
+            <img src='/assets/images/banner.png' alt='banner'></img>
           </div>
 
         </section>
@@ -155,13 +162,15 @@ export default function Home() {
           <div className='flex'>
             <p className='max-sm:text-[5.5vw] max-md:text-[5vw] text-[33px] font-bold text-white'>
               Tanpa Ragu, <br />
-              Hire Sekarang.
+              Mulai Sekarang.
             </p>
           </div>
           <div className='flex justify-center items-center max-sm:my-3 w-auto max-sm:items-center'>
-            <button className=' bg-white p-4 rounded-lg'>
-              <span className='text-pw-purple font-bold'>Hire Sekarang</span>
-            </button>
+            <Link href='/talents'>
+              <button className=' bg-white p-4 rounded-lg hover:bg-pw-white-hover'>
+                <span className='text-pw-purple font-bold'>Mulai Sekarang</span>
+              </button>
+            </Link>
           </div>
         </section>
         {/* End of CTA */}
