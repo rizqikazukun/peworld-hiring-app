@@ -1,102 +1,110 @@
 /* eslint-disable @next/next/no-img-element */
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
-import { Router, useRouter } from 'next/router'
 import React from 'react'
 import { Poppins } from 'next/font/google'
+import E404 from '@/components/E404'
+
+
 const poppins = Poppins({ subsets: ['latin'], weight: '400' })
 
+
 export default function TalentDetail(props) {
-	const router = useRouter()
-	const { query: { uid } } = router
 	const [detail, setDetail] = React.useState({})
 
+	console.log(props)
 
 	React.useEffect(() => {
 
-		if (Object.keys(detail).length === 0) {
+		if (props.user_uid === undefined) {
 			setDetail(props.data.data)
-		}		
+		}
 
 
-	}, [detail, props.data.data])
+	}, [detail, props.data.data, props.user_uid])
 
 
 
 	return (
-		<div id='page-TalentDetail' className={poppins.className} style={{backgroundColor: '#eaeaea'}} >
+		<div id='page-TalentDetail' className={poppins.className} style={{ backgroundColor: '#eaeaea' }} >
 			<Navbar />
 
 			<div id='backgroundDecoration' className='mt-[89px] mx-auto flex flex-col w-full relative'>
 				<div className='h-[40vh] w-full bg-pw-purple absolute z-[0]'></div>
 			</div>
 
-			<div className='container mx-auto grid grid-cols-6 mt-14 mb-10'>
+			{
+				props.data.status === 404 ?
+					<div className='container mx-auto grid grid-cols-6 mt-14 mb-10'>
+						<E404 className='col-span-6 bg-white p-10 m-5 rounded-xl shadow-xl z-10 flex flex-col gap-10 items-center justify-center  min-h-[500px]' message='Sorry, No Talent Found.' />
+					</div> :
+					<div className='container mx-auto grid grid-cols-6 mt-14 mb-10'>
 
-				<div className='max-lg:col-span-6 col-span-2 bg-white p-10 m-5 rounded-xl shadow-xl z-10 flex flex-col gap-8'>
+						<div className='max-lg:col-span-6 col-span-2 bg-white p-10 m-5 rounded-xl shadow-xl z-10 flex flex-col gap-8'>
 
-					<img id='talent-photo' src={detail?.photo} alt={detail?.last_name} className='w-[200px] h-[200px] object-cover object-top rounded-full self-center shadow-xl' />
+							<img id='talent-photo' src={detail?.photo} alt={detail?.last_name} className='w-[200px] h-[200px] object-cover object-top rounded-full self-center shadow-xl' />
 
-					<div id='talent-info' className='flex flex-col gap-2'>
-						<p className='font-semibold  text-xl'>{`${detail?.first_name} ${detail?.last_name === detail?.first_name ? "" : detail?.last_name}`}</p>
-						<p className='text-sm text-pw-gray60'>{detail?.job_title}</p>
-						<p className='text-sm text-pw-gray60'>{detail?.job_time_preferece}</p>
-						<p className='text-sm text-pw-gray60'> <img className='inline my-[-1px]' src="/assets/icons/location.svg" alt="icon location" /> {detail?.location}</p>
-						<p className='text-sm text-pw-gray60 max-sm:text-justify'>{detail?.sort_description}</p>
-					</div>
+							<div id='talent-info' className='flex flex-col gap-2'>
+								<p className='font-semibold  text-xl'>{`${detail?.first_name ?? ""} ${detail?.last_name === detail?.first_name ? "" : detail?.last_name}`}</p>
+								<p className='text-sm text-pw-gray60'>{detail?.job_title}</p>
+								<p className='text-sm text-pw-gray60'>{detail?.job_time_preferece}</p>
+								<p className='text-sm text-pw-gray60'> <img className='inline my-[-1px]' src="/assets/icons/location.svg" alt="icon location" /> {detail?.location}</p>
+								<p className='text-sm text-pw-gray60 max-sm:text-justify'>{detail?.sort_description}</p>
+							</div>
 
-					<button id='button-hire' className='bg-pw-purple hover:bg-pw-purple-hover text-white rounded font-semibold py-2 shadow-md'>
-						Hire
-					</button>
+							<button id='button-hire' className='bg-pw-purple hover:bg-pw-purple-hover text-white rounded font-semibold py-2 shadow-md'>
+								Hire
+							</button>
 
-					<div id='talent-skills' className='flex flex-col gap-2'>
-						<h3 className='font-semibold  text-xl'>Skills</h3>
-						<div className='flex flex-wrap gap-2 text-white'>
-							{
-								detail?.skills?.map((skill, index) => (
-									<span key={index} className='p-1 bg-pw-orange rounded shadow font-medium'>
-										{skill}
-									</span>
-								))
-							}
-						</div>
-					</div>
+							<div id='talent-skills' className='flex flex-col gap-2'>
+								<h3 className='font-semibold  text-xl'>Skills</h3>
+								<div className='flex flex-wrap gap-2 text-white'>
+									{
+										detail?.skills?.map((skill, index) => (
+											<span key={index} className='p-1 bg-pw-orange rounded shadow font-medium'>
+												{skill}
+											</span>
+										))
+									}
+								</div>
+							</div>
 
-					<div id='talent-contact' className='flex flex-col gap-2'>
+							<div id='talent-contact' className='flex flex-col gap-2'>
 
-						<h3 className='font-semibold  text-xl'>Contact</h3>
-						{
-							detail.social === undefined ? "" : Object.entries(detail.social).map((item, index) => {
+								<h3 className='font-semibold  text-xl'>Contact</h3>
+								{
+									detail?.social === undefined ? "" : Object.entries(detail.social).map((item, index) => {
 
-								const [key, value] = item
+										const [key, value] = item
 
-								let Lable
-								if (key === 'instagram') {
-									Lable = <span><img className='inline h-[20px]' src="/assets/icons/instagram.svg" alt="instagram" /> Instagram </span>
-								} else if (key === 'github') {
-									Lable = <span><img className='inline h-[20px]' src="/assets/icons/github.svg" alt="github" /> Github </span>
-								} else if (key === 'gitlab') {
-									Lable = <span><img className='inline h-[20px]' src="/assets/icons/gitlab.svg" alt="gitlab" /> Gitlab </span>
-								} else if (key === 'email') {
-									Lable = <span><img className='inline h-[20px]' src="/assets/icons/email.svg" alt="email" /> Email </span>
-								} else {
-									Lable = <span><img className='inline h-[20px]' src="/assets/icons/other.svg" alt={key} /> {key} </span>
+										let Lable
+										if (key === 'instagram') {
+											Lable = <span><img className='inline h-[20px]' src="/assets/icons/instagram.svg" alt="instagram" /> Instagram </span>
+										} else if (key === 'github') {
+											Lable = <span><img className='inline h-[20px]' src="/assets/icons/github.svg" alt="github" /> Github </span>
+										} else if (key === 'gitlab') {
+											Lable = <span><img className='inline h-[20px]' src="/assets/icons/gitlab.svg" alt="gitlab" /> Gitlab </span>
+										} else if (key === 'email') {
+											Lable = <span><img className='inline h-[20px]' src="/assets/icons/email.svg" alt="email" /> Email </span>
+										} else {
+											Lable = <span><img className='inline h-[20px]' src="/assets/icons/other.svg" alt={key} /> {key} </span>
+										}
+
+										return (
+											<p key={index} className='text-sm text-pw-gray60'>{Lable}{`: ${value} `}</p>
+										)
+									})
 								}
+							</div>
 
-								return (
-									<p key={index} className='text-sm text-pw-gray60'>{Lable}{`: ${value} `}</p>
-								)
-							})
-						}
+						</div>
+
+						<div className='max-lg:col-span-6 col-span-4 bg-white p-10 m-5 rounded-xl shadow-xl z-10'>
+
+						</div>
+
 					</div>
-
-				</div>
-
-				<div className='max-lg:col-span-6 col-span-4 bg-white p-10 m-5 rounded-xl shadow-xl z-10'>
-
-				</div>
-
-			</div>
+			}
 
 			<Footer />
 		</div>
