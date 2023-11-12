@@ -42,9 +42,9 @@ export default function Home() {
       <main className='container mx-auto lg:mt-[12vh] max-sm:w-[88%]'>
 
         {/* hero section */}
-        <section id='hero-section' className='scroll-helper grid grid-cols-2 max-md:grid-cols-1 my-20 mt-36 '>
+        <section id='hero-section' className='scroll-helper grid grid-cols-2 max-md:grid-cols-1 mb-16 mt-36'>
 
-          <div className='flex items-center justify-self-center max-lg:items-center max-w-[40vh]'>
+          <div className='flex items-center justify-self-center max-lg:items-center max-md:w-[80vw] lg:max-w-[50vw] xl:max-w-[28vw] p-3'>
             <div className=''>
               <h1 className='max-sm:text-[5.5vw] max-md:text-[5vw] text-[33px] font-bold'>
                 Talenta terbaik negri untuk perubahan revolusi 4.0
@@ -52,27 +52,23 @@ export default function Home() {
               <p className='my-5'>Recruit talenta terbaik sesuai dengan kebutuhan industri.</p>
               <div className='flex gap-2'>
                 <button className='rounded-md  font-bold p-3 bg-pw-orange hover:bg-pw-orange-hover text-pw-white'>
-                  Hire Sekarang
-                </button>
-                <button className='rounded-md  font-bold p-3 bg-pw-purple text-pw-white hover:bg-pw-purple-hover'
-                  onClick={() => window.scrollTo({ top: listView[1], behavior: 'smooth' })}>
-                  Selanjutnya
+                  Mulai Sekarang
                 </button>
               </div>
             </div>
           </div>
 
-          <div id='bannerImage' className='flex w-[80%] max-lg:items-end max-sm:order-first items-center justify-self-center'>
-            <img src='/assets/images/banner.png' alt='banner'></img>
+          <div id='bannerImage' className='flex max-lg:items-end max-md:order-first items-center justify-center'>
+            <img src='/assets/images/banner.png'alt='banner'></img>
           </div>
 
         </section>
         {/* End of hero section */}
 
         {/* Section 2 */}
-        <section id='banner-2' className='scroll-helper grid grid-cols-2 max-md:grid-cols-1 my-20'>
+        <section id='banner-2' className='scroll-helper grid grid-cols-2 max-md:grid-cols-1 my-16'>
 
-          <div className='flex max-lg:items-start items-center justify-self-center max-w-[40vh]'>
+          <div className='flex max-lg:items-start items-center justify-self-center max-md:w-[80vw] lg:max-w-[50vw] xl:max-w-[26vw] p3'>
             <div>
               <h2>
                 <p className='max-sm:text-[5.5vw] max-md:text-[5vw] text-[33px] font-bold max-lg:leading-loose leading-relaxed'>
@@ -87,7 +83,7 @@ export default function Home() {
                     "Talenta terbaik siap didapatkan",
                     "Talenta dengan kemampuan spesifik",
                     "Talenta dengan standar industri",
-                    "Talenta disertifikasi dengan standar industri yang ada"
+                    "Disertifikasi dengan standar industri yang ada"
                   ]
                     .map((item, index) => {
                       return (
@@ -99,19 +95,10 @@ export default function Home() {
                     })
                 }
               </div>
-              <div className='flex gap-2'>
-                <button className='rounded-md  font-bold p-3 bg-pw-orange hover:bg-pw-orange-hover text-pw-white'>
-                  Hire Sekarang
-                </button>
-                <button className='rounded-md  font-bold p-3 bg-pw-purple text-pw-white hover:bg-pw-purple-hover'
-                  onClick={() => window.scrollTo({ top: listView[2], behavior: 'smooth' })}>
-                  Selanjutnya
-                </button>
-              </div>
             </div>
           </div>
 
-          <div id='bannerImage' className='flex w-[80%] max-lg:items-end order-first items-center justify-self-center'>
+          <div id='bannerImage' className='flex max-lg:items-end order-first justify-center p-3'>
             <img src='/assets/images/banner_2.png' alt='banner_2'></img>
           </div>
 
@@ -119,9 +106,9 @@ export default function Home() {
         {/* End of Section 2 */}
 
         {/* Section 3 */}
-        <section id='banner-3' className='scroll-helper grid grid-cols-2 max-md:grid-cols-1 my-20'>
+        <section id='banner-3' className='scroll-helper grid grid-cols-2 max-md:grid-cols-1 my-16'>
 
-          <div className='flex max-lg:items-start items-center justify-self-center max-w-[40vh]'>
+          <div className='flex max-lg:items-start items-center justify-self-center max-md:w-[80vw] lg:max-w-[50vw] xl:max-w-[26vw] p-3'>
             <div>
               <h2 className='max-sm:text-[5.5vw] max-md:text-[5vw] text-[33px] font-bold'>
                 Skill Tallent
@@ -151,15 +138,10 @@ export default function Home() {
                     })
                 }
               </div>
-              <div className='flex gap-2'>
-                <button className='rounded-md font-bold p-3 bg-pw-orange hover:bg-pw-orange-hover text-pw-white'>
-                  Hire Sekarang
-                </button>
-              </div>
             </div>
           </div>
 
-          <div id='bannerImage' className='flex w-[80%] max-lg:items-end max-lg:order-first items-center justify-self-center'>
+          <div id='bannerImage' className='flex max-lg:items-end max-lg:order-first items-center justify-center p-3'>
             <img src='/assets/images/banner_3.png' alt='banner_3' />
           </div>
 
