@@ -1,1 +1,31 @@
-<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'><svg height="32px" id="Layer_1" style="enable-background:new 0 0 32 32;" version="1.1" viewBox="0 0 32 32" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"/></svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="7.4083252mm"
+   height="5.291667mm"
+   viewBox="0 0 7.4083252 5.291667"
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm" /><defs
+     id="defs1" /><g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-105.53443,-139.07681)"><path
+       d="m 106.0636,140.13515 h 6.35 c 0.2921,0 0.52916,-0.23707 0.52916,-0.52917 0,-0.2921 -0.23706,-0.52916 -0.52916,-0.52916 h -6.35 c -0.2921,0 -0.52917,0.23706 -0.52917,0.52916 0,0.2921 0.23707,0.52917 0.52917,0.52917 z m 6.35,1.05833 h -6.35 c -0.2921,0 -0.52917,0.23707 -0.52917,0.52917 0,0.2921 0.23707,0.52917 0.52917,0.52917 h 6.35 c 0.2921,0 0.52916,-0.23707 0.52916,-0.52917 0,-0.2921 -0.23706,-0.52917 -0.52916,-0.52917 z m 0,2.11667 h -6.35 c -0.2921,0 -0.52917,0.23707 -0.52917,0.52917 0,0.2921 0.23707,0.52916 0.52917,0.52916 h 6.35 c 0.2921,0 0.52916,-0.23706 0.52916,-0.52916 0,-0.2921 -0.23706,-0.52917 -0.52916,-0.52917 z"
+       id="path1"
+       style="fill:#5e50a1;fill-opacity:1;stroke-width:0.264583" /></g></svg>
