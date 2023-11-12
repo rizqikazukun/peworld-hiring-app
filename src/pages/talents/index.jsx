@@ -70,7 +70,7 @@ export default function TalentList(props) {
 
 										{/* Talent List info */}
 										<div className='max-lg:col-span-2 col-span-3 p-5 h-fit flex flex-col max-lg:gap-1 lg:gap-2'>
-											<p className='font-semibold  text-xl'>{`${talent?.first_name} ${talent?.last_name}`}</p>
+											<p className='font-semibold  text-xl'>{`${talent?.first_name} ${talent?.last_name === talent?.first_name ? "" : talent?.last_name}`}</p>
 											<p className='text-sm text-pw-gray60'>{talent?.job_title}</p>
 											<p className='text-sm text-pw-gray60'> <img className='inline my-[-1px]' src="/assets/icons/location.svg" alt="icon location" /> {talent?.location}</p>
 											<div className='flex flex-wrap gap-2 text-white'>{talent?.skills?.map((skill, index) => (

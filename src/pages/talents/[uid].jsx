@@ -38,7 +38,7 @@ export default function TalentDetail(props) {
 					<img id='talent-photo' src={detail?.photo} alt={detail?.last_name} className='w-[200px] h-[200px] object-cover object-top rounded-full self-center shadow-xl' />
 
 					<div id='talent-info' className='flex flex-col gap-2'>
-						<p className='font-semibold  text-xl'>{`${detail?.first_name} ${detail?.last_name}`}</p>
+						<p className='font-semibold  text-xl'>{`${detail?.first_name} ${detail?.last_name === detail?.first_name ? "" : detail?.last_name}`}</p>
 						<p className='text-sm text-pw-gray60'>{detail?.job_title}</p>
 						<p className='text-sm text-pw-gray60'>{detail?.job_time_preferece}</p>
 						<p className='text-sm text-pw-gray60'> <img className='inline my-[-1px]' src="/assets/icons/location.svg" alt="icon location" /> {detail?.location}</p>

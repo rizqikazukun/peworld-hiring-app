@@ -8,14 +8,12 @@ const db = [
     "job_title": "Fullstack Developer",
     "location": "Jakarta, Indonesia.",
     "job_time_preferece": "Full-time",
-    "sort_description": "Naruto adalah seorang fullstack developer yang pernah bekerja di salah satu startup besar yang berada dijepang",
+    "sort_description": "Rizqi adalah seorang fullstack developer dari bootacamp fullstack and mobile batch 15 Pijarcamp ",
     "photo": "https://res.cloudinary.com/owncloudinarycdn/image/upload/v1699695837/y8ycssboowbwuaogprhj.jpg",
-    "skills": ["Java Script", "NextJS", "ExpressJS"],
+    "skills": ["Javascript", "ExpressJS","ReactJS", "NextJS" ],
     "social": {
-      "email": "uzumakinaruto@example.com",
-      "instagram": "uzumaki_naruto",
-      "github": "uzumaki_naruto",
-      "gitlab": "uzumaki_naruto"
+      "email": "rizqipratama@example.com",
+      "github": "rizqikazukun",
     },
     "experiences": [{
       "Job Title": "",
@@ -103,7 +101,7 @@ const db = [
     "last_name": "Kakashi",
     "job_title": "SCRUM Master",
     "location": "Tokyo, Japan",
-    "job_time_preferece": "Fulltime",
+    "job_time_preferece": "Full-time",
     "sort_description": "Kakashi adalah seorang SCRUM Master yang pernah bekerja di salah satu startup besar yang berada dijepang",
     "photo": "https://akcdn.detik.net.id/community/media/visual/2023/06/04/karakter-naruto-versi-ai-tsunade-tampak-mudah-dan-hinata-kawaii-banget-7.jpeg",
     "skills": ["Leadership", "Project Management", "Communication"],
@@ -127,7 +125,7 @@ const db = [
     "last_name": "Jiraya",
     "job_title": "Copywriter",
     "location": "Tokyo, Japan",
-    "job_time_preferece": "Fulltime",
+    "job_time_preferece": "Full-time",
     "sort_description": "Kakashi adalah seorang Copywriter yang pernah bekerja di salah satu startup besar yang berada dijepang",
     "photo": "https://akcdn.detik.net.id/community/media/visual/2023/06/04/karakter-naruto-versi-ai-tsunade-tampak-mudah-dan-hinata-kawaii-banget-5.jpeg",
     "skills": ["10 Finger Typing", "374 Word Per Minute Typing", "Wide Knowledge"],
@@ -153,7 +151,7 @@ const db = [
     "location": "Tokyo, Japan",
     "job_time_preferece": "Part-time",
     "sort_description": "Hinata adalah seorang Frontend Developer yang pernah bekerja di salah satu startup besar yang berada dijepang",
-    "photo": "https://akcdn.detik.net.id/community/media/visual/2023/06/04/karakter-naruto-versi-ai-tsunade-tampak-mudah-dan-hinata-kawaii-banget-2.jpeg",
+    "photo": "https://res.cloudinary.com/owncloudinarycdn/image/upload/v1699765668/utg8bgkttdsvuv1lid33.jpg",
     "skills": ["ReactJS", "Bootstrap", "Tailwind"],
     "social": {
       "email": "hyuugahinata@example.com",
@@ -170,7 +168,6 @@ const db = [
     }],
   }
 ]
-
 
 
 export default function handler(req, res) {
@@ -197,9 +194,4 @@ export default function handler(req, res) {
       res.status(500).json({ error: 'failed to load data' })
     }
   }
-
-
-
-
-
 }
