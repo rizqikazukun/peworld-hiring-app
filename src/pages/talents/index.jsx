@@ -9,27 +9,39 @@ const poppins = Poppins({ subsets: ['latin'], weight: '400' })
 
 
 const pageInfo = {
-	title: 'Talent List'
+	title: 'Talent List | Peworld'
 }
 
 export default function TalentList(props) {
 
 	const [listTalent, setListTalent] = React.useState([])
+	const [currentPage, setCurrentPage] = React.useState(1)
+	const [dataLength, setDataLength] = React.useState(6)
+	const [start, setStart] = React.useState(0)
+	const [end, setEnd] = React.useState(dataLength)
 
 	React.useEffect(() => {
 
-		if (listTalent?.length === 0) {
-			setListTalent(props.data.data)
+		if (currentPage !== 1) {
+			setEnd(dataLength * currentPage)
+			setStart(dataLength * currentPage - dataLength)
+			setListTalent(props.data.data.slice(start, end))
+			console.log(props.data.data.slice(start, end))
+		} else {
+			setListTalent(props.data.data.slice(0, dataLength))
+			console.log(props.data.data.slice(0, dataLength))
 		}
 
-	}, [listTalent, props.data])
+	}, [currentPage, dataLength, end, props.data.data, start])
 
 	return (
 		<div id='page-talentList' className={poppins.className}>
 			<Navbar />
 			<Head>
 				<title>
-					Talent List
+					{
+						pageInfo.title
+					}
 				</title>
 			</Head>
 			<main className='mx-auto mt-[87px] ' >
@@ -98,6 +110,45 @@ export default function TalentList(props) {
 					</div>
 
 
+					<div className='container flex mx-auto gap-2 mb-10 justify-center items-center'>
+						<button className='w-[30px] h-[30px] flex
+												text-white bg-white hover:bg-pw-purple-hover disabled:hover:bg-pw-gray20 rounded-full'
+							disabled={currentPage === 1 ? true : false}
+							onClick={()=>{
+								setCurrentPage(currentPage+1)
+							}}>
+							<img className=' w-[30px] h-[30px] rounded-full' src="/assets/icons/prev.svg" alt="previous" />
+						</button>
+						{
+							props.data.data === undefined ? "" :
+								[...new Array(Math.ceil(props.data.data.length / dataLength)).keys()]
+									.map((item, index) => {
+										return (
+											<button
+												className='h-[40px] w-[40px] flex justify-center items-center
+												text-white bg-pw-gray40 hover:bg-pw-purple-hover rounded-full
+											 	disabled:bg-pw-purple-hover'
+												key={index}
+												disabled={item + 1 === currentPage ? true : false}
+												onClick={() => {
+													setCurrentPage(item + 1)
+												}}>
+												<p className=' font-bold'>{item + 1}</p>
+											</button>
+										)
+									})
+						}
+
+						<button className='w-[30px] h-[30px] flex
+												text-white bg-white hover:bg-pw-purple-hover disabled:hover:bg-pw-gray20 rounded-full'
+							disabled={currentPage === Math.ceil(props.data.data.length / dataLength) ? true : false}
+							onClick={()=>{
+								setCurrentPage(currentPage+1)
+							}}>
+							<img className=' w-[30px] h-[30px] rounded-full' src="/assets/icons/next.svg" alt="next" />
+						</button>
+
+					</div>
 				</div>
 
 			</main>

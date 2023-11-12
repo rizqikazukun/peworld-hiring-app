@@ -17,7 +17,7 @@ export default function Navbar() {
 					</Link>
 
 					<Link href="/talents">
-						<p className=' text-pw-black font-medium'>
+						<p className=' max-lg:hidden text-pw-purple font-semibold'>
 							Talent List
 						</p>
 					</Link>
