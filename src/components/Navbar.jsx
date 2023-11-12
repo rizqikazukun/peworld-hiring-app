@@ -5,7 +5,7 @@ import React from 'react'
 
 export default function Navbar() {
 	return (
-		<div id='Navbar' className='container mx-auto z-[9999]'>
+		<div id='Navbar' className='container mx-auto z-[9999] shadow'>
 			<div className='Navbar-content container flex flex-row justify-between px-8 py-3 max-md:m-2 mx-auto'>
 
 				<div id='nav-item-left' className='flex items-center gap-10'>

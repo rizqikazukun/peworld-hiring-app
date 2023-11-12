@@ -47,7 +47,7 @@ export default function Home() {
 
           <div className='flex items-center justify-self-center max-lg:items-center max-md:w-[80vw] lg:max-w-[50vw] xl:max-w-[28vw] p-3'>
             <div className=''>
-              <h1 className='max-sm:text-[5.5vw] max-md:text-[5vw] text-[33px] font-bold'>
+              <h1 className=' max-sm:text-[5.5vw] max-md:text-[5vw] text-[33px] font-bold'>
                 Talenta terbaik negri untuk perubahan revolusi 4.0
               </h1>
               <p className='my-5'>
