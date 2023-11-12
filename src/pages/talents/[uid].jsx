@@ -99,8 +99,10 @@ export default function TalentDetail(props) {
 
 						</div>
 
-						<div className='max-lg:col-span-6 col-span-4 bg-white p-10 m-5 rounded-xl shadow-xl z-10'>
-
+						<div className='max-lg:col-span-6 col-span-4 bg-white p-10 m-5 rounded-xl shadow-xl z-10 flex justify-center items-center'>
+							<p className='text-2xl text-pw-purple font-bold text-center'>
+								Sorry, No content available for now.
+							</p>
 						</div>
 
 					</div>
