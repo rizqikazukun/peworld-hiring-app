@@ -7,7 +7,6 @@ import Head from 'next/head'
 import Link from 'next/link'
 const poppins = Poppins({ subsets: ['latin'], weight: '400' })
 
-
 const pageInfo = {
 	title: 'Talent List | Peworld'
 }
@@ -114,8 +113,8 @@ export default function TalentList(props) {
 						<button className='w-[30px] h-[30px] flex
 												text-white bg-white hover:bg-pw-purple-hover disabled:hover:bg-pw-gray20 rounded-full'
 							disabled={currentPage === 1 ? true : false}
-							onClick={()=>{
-								setCurrentPage(currentPage+1)
+							onClick={() => {
+								setCurrentPage(currentPage - 1)
 							}}>
 							<img className=' w-[30px] h-[30px] rounded-full' src="/assets/icons/prev.svg" alt="previous" />
 						</button>
@@ -142,8 +141,8 @@ export default function TalentList(props) {
 						<button className='w-[30px] h-[30px] flex
 												text-white bg-white hover:bg-pw-purple-hover disabled:hover:bg-pw-gray20 rounded-full'
 							disabled={currentPage === Math.ceil(props.data.data.length / dataLength) ? true : false}
-							onClick={()=>{
-								setCurrentPage(currentPage+1)
+							onClick={() => {
+								setCurrentPage(currentPage + 1)
 							}}>
 							<img className=' w-[30px] h-[30px] rounded-full' src="/assets/icons/next.svg" alt="next" />
 						</button>
