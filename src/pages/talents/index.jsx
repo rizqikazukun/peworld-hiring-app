@@ -11,6 +11,7 @@ const pageInfo = {
 	title: 'Talent List | Peworld'
 }
 
+
 export default function TalentList(props) {
 
 	const [listTalent, setListTalent] = React.useState([])
@@ -21,20 +22,55 @@ export default function TalentList(props) {
 
 	const [optionsBar, setOptionBar] = React.useState(false)
 	const [searchBy, setSearchBy] = React.useState('')
+	const [searchValue, setSearchValue] = React.useState('')
+
+	const handlerSubmit = (value) => {
+
+	}
 
 	React.useEffect(() => {
+
+		const displayData = []
+
+		props.data.data.map((item) => {
+			if (searchBy === 'location') {
+				if (item.location.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())) {
+					displayData.push(item)
+				}
+			} else if (searchBy === 'job_title') {
+				if (item.job_title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())) {
+					displayData.push(item)
+				}
+			} else if (searchBy === 'name') {
+				if (String(`${item.first_name} ${item.last_name}`).toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())) {
+					displayData.push(item)
+				}
+
+			} else if (searchBy === 'skills') {
+				if (item.skills.join(', ').toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())) {
+					displayData.push(item)
+				}
+			} else {
+				if (item.location.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()) ||
+					String(`${item.first_name} ${item.last_name}`).toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()) ||
+					item.job_title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()) ||
+					item.skills.join(', ').toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())) {
+					displayData.push(item)
+				}
+			}
+		})
 
 		if (currentPage !== 1) {
 			setEnd(dataLength * currentPage)
 			setStart(dataLength * currentPage - dataLength)
-			setListTalent(props.data.data.slice(start, end))
-			console.log(props.data.data.slice(start, end))
+			setListTalent(displayData.slice(start, end))
+			console.log(displayData.slice(start, end))
 		} else {
-			setListTalent(props.data.data.slice(0, dataLength))
-			console.log(props.data.data.slice(0, dataLength))
+			setListTalent(displayData.slice(0, dataLength))
+			console.log(displayData.slice(0, dataLength))
 		}
 
-	}, [currentPage, dataLength, end, props.data.data, start, optionsBar])
+	}, [currentPage, dataLength, end, props.data.data, start, optionsBar, searchBy, searchValue])
 
 	return (
 		<div id='page-talentList' className={poppins.className}>
@@ -64,10 +100,12 @@ export default function TalentList(props) {
 						<div className='container flex max-sm:flex-col max-sm:items-center max-sm:text-center flex-warp 
 					gap-2 p-5 bg-white max-sm:mr-5 mx-auto my-6 shadow-md max-sm:rounded-3xl rounded-full mt-10'>
 							<input className='w-full sm:block focus:outline-none max-sm:placeholder:text-center '
-								type="search" placeholder='Search for any skill' name="" id="" />
+								type="search" placeholder='Search for any skill' name="" id="" onChange={(e) => {
+									setSearchValue(e.target.value)
+								}} />
 
 							<p className='border-l-2 max-sm:border-none border-pw-gray20 p-2 text-pw-gray40 max-sm:w-full hover:text-pw-gray60'>
-								<button onClick={()=>{
+								<button onClick={() => {
 									if (optionsBar === false) {
 										setOptionBar(true)
 									} else {
@@ -96,22 +134,23 @@ export default function TalentList(props) {
 								<div className='flex flex-col justify-center gap-2'>
 									<p>Search by :</p>
 									<select name="" id="" className='bg-white rounded-full focus:border-none'
-									onChange={(e)=>{
-										console.log(e.target.value)
-										setSearchBy(e.target.value)
-									}}>
-										<option value="skill">Skill</option>
+										onChange={(e) => {
+											console.log(e.target.value)
+											setSearchBy(e.target.value)
+										}}>
+										<option value="skills">Skill</option>
 										<option value="location">Location</option>
 										<option value="job_title">Job Title</option>
+										<option value="name">name</option>
 									</select>
 								</div>
 								<div className='flex flex-col justify-center gap-2'>
 									<p>Count data :</p>
 									<select name="" id="" className='bg-white rounded-full focus:border-none'
-									onChange={(e)=>{
-										console.log(e.target.value)
-										setDataLength(e.target.value)
-									}}>
+										onChange={(e) => {
+											console.log(e.target.value)
+											setDataLength(e.target.value)
+										}}>
 										<option value="4">4</option>
 										<option value="6">6</option>
 										<option value="8">8</option>
@@ -123,8 +162,8 @@ export default function TalentList(props) {
 							</div>
 							<div className='flex flex-row-reverse gap-2'>
 								<button className=' text-sm font-bold rounded-full
-							 		bg-pw-purple hover:bg-pw-purple-hover text-white px-5'
-									 onClick={()=>{
+							 		bg-pw-purple hover:bg-pw-purple-hover text-white px-5 py-1'
+									onClick={() => {
 										if (optionsBar === false) {
 											setOptionBar(true)
 										} else {
@@ -134,8 +173,8 @@ export default function TalentList(props) {
 									Apply
 								</button>
 								<button className='text-sm font-bold rounded-full border-2
-									 border-pw-purple hover:bg-pw-white-hover text-pw-purple px-5'
-									 onClick={()=>{
+									 border-pw-purple hover:bg-pw-white-hover text-pw-purple px-5 py-1'
+									onClick={() => {
 										if (optionsBar === false) {
 											setOptionBar(true)
 										} else {
