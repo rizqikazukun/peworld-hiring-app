@@ -19,6 +19,9 @@ export default function TalentList(props) {
 	const [start, setStart] = React.useState(0)
 	const [end, setEnd] = React.useState(dataLength)
 
+	const [optionsBar, setOptionBar] = React.useState(false)
+	const [searchBy, setSearchBy] = React.useState('')
+
 	React.useEffect(() => {
 
 		if (currentPage !== 1) {
@@ -31,7 +34,7 @@ export default function TalentList(props) {
 			console.log(props.data.data.slice(0, dataLength))
 		}
 
-	}, [currentPage, dataLength, end, props.data.data, start])
+	}, [currentPage, dataLength, end, props.data.data, start, optionsBar])
 
 	return (
 		<div id='page-talentList' className={poppins.className}>
@@ -56,14 +59,96 @@ export default function TalentList(props) {
 
 				</div>
 				<div id='content-container' className='mx-auto flex flex-col bg-pw-gray10'>
+					<div className=' container mx-auto flex flex-col items-center' >
 
-					<div className='container flex max-sm:flex-col max-sm:items-center max-sm:text-center flex-warp gap-2 p-5 bg-white max-sm:mr-5 mx-auto my-6 shadow-md max-sm:rounded-3xl rounded-full mt-10'>
-						<input className='w-full sm:block focus:outline-none max-sm:placeholder:text-center' type="search" placeholder='Search for any skill' name="" id="" />
-						<p className='border-l-2 max-sm:border-none border-pw-gray20 p-2 text-pw-gray40 max-sm:w-full hover:text-pw-gray60'>
-							<button>Kategori</button>
-						</p>
-						<button className='py-2 px-6 max-sm:w-full rounded-full bg-pw-purple hover:bg-pw-purple-hover font-bold text-white'>Search</button>
+						<div className='container flex max-sm:flex-col max-sm:items-center max-sm:text-center flex-warp 
+					gap-2 p-5 bg-white max-sm:mr-5 mx-auto my-6 shadow-md max-sm:rounded-3xl rounded-full mt-10'>
+							<input className='w-full sm:block focus:outline-none max-sm:placeholder:text-center '
+								type="search" placeholder='Search for any skill' name="" id="" />
+
+							<p className='border-l-2 max-sm:border-none border-pw-gray20 p-2 text-pw-gray40 max-sm:w-full hover:text-pw-gray60'>
+								<button onClick={()=>{
+									if (optionsBar === false) {
+										setOptionBar(true)
+									} else {
+										setOptionBar(false)
+									}
+								}}>
+									Options
+								</button>
+							</p>
+							<button className='py-2 px-6 max-sm:w-full rounded-full bg-pw-purple hover:bg-pw-purple-hover font-bold text-white'>
+								Search
+							</button>
+
+
+
+						</div>
+
+						<div id='option-bar' className='container absolute h-fit w-[94vw] max-md:mt-56 mt-36
+						 bg-white shadow-2xl mx-auto rounded-2xl p-5 flex-col border-2' hidden={!optionsBar}>
+
+							<div className='flex justify-between'>
+								<p className=' text-xl'>Options</p>
+							</div>
+
+							<div className='grid max-sm:grid-cols-1 grid-cols-2 p-5 gap-2'>
+								<div className='flex flex-col justify-center gap-2'>
+									<p>Search by :</p>
+									<select name="" id="" className='bg-white rounded-full focus:border-none'
+									onChange={(e)=>{
+										console.log(e.target.value)
+										setSearchBy(e.target.value)
+									}}>
+										<option value="skill">Skill</option>
+										<option value="location">Location</option>
+										<option value="job_title">Job Title</option>
+									</select>
+								</div>
+								<div className='flex flex-col justify-center gap-2'>
+									<p>Count data :</p>
+									<select name="" id="" className='bg-white rounded-full focus:border-none'
+									onChange={(e)=>{
+										console.log(e.target.value)
+										setDataLength(e.target.value)
+									}}>
+										<option value="4">4</option>
+										<option value="6">6</option>
+										<option value="8">8</option>
+										<option value="10">10</option>
+									</select>
+								</div>
+
+
+							</div>
+							<div className='flex flex-row-reverse gap-2'>
+								<button className=' text-sm font-bold rounded-full
+							 		bg-pw-purple hover:bg-pw-purple-hover text-white px-5'
+									 onClick={()=>{
+										if (optionsBar === false) {
+											setOptionBar(true)
+										} else {
+											setOptionBar(false)
+										}
+									}}>
+									Apply
+								</button>
+								<button className='text-sm font-bold rounded-full border-2
+									 border-pw-purple hover:bg-pw-white-hover text-pw-purple px-5'
+									 onClick={()=>{
+										if (optionsBar === false) {
+											setOptionBar(true)
+										} else {
+											setOptionBar(false)
+										}
+									}}>
+									Cancle
+								</button>
+
+							</div>
+						</div>
 					</div>
+
 
 
 					<div className='container mx-auto grid max-lg:grid-cols-2 grid-cols-4 mb-10'>
