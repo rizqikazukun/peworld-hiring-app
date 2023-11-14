@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function MobileNavbarLink({ onClick, pageName }) {
 	return (
-		<div className={`border-b-2 py-4 w-full flex ${pageName.toLowerCase() === 'close' ? 'justify-center' : 'justify-between'}`}
+		<div className={`border-b-2 py-4 w-full flex hover:cursor-pointer ${pageName.toLowerCase() === 'close' ? 'justify-center' : 'justify-between'}`}
 			onClick={onClick}>
 			<p className=' text-[2.6vh] font-bold text-pw-purple'>
 				{pageName}
