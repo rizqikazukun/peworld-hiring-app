@@ -25,13 +25,6 @@ module.exports = {
         'pw-white': '#F6F7F8',
         'pw-white-hover' : '#ebebeb',
         'pw-black': '#1F2A36'
-      },
-      screens: {
-        'phone': '640px',
-        'tablet': '768px',
-        'tablet-mid': '1024px',
-        'desktop': '1280px',
-        'desktop-mid': '1536px'
       }
     },
   },
