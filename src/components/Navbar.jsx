@@ -37,13 +37,17 @@ export default function Navbar() {
 
 					<div id='nav-item-right' className='flex flex-row gap-2 items-center'>
 
-						<button className='w-[128px] rounded-full px-1 h-10 max-lg:hidden bg-white hover:bg-pw-white-hover border-pw-purple border-2'>
-							<span className=' text-pw-purple font-semibold'>Login</span>
-						</button>
+						<Link href='/login'>
+							<button className='w-[128px] rounded-full px-1 h-10 max-lg:hidden bg-white hover:bg-pw-white-hover border-pw-purple border-2'>
+								<span className=' text-pw-purple font-semibold'>Login</span>
+							</button>
+						</Link>
 
-						<button className='w-[128px] rounded-full px-1 h-10 max-lg:hidden  bg-pw-purple hover:bg-pw-purple-hover border-pw-purple border-2'>
-							<span className=' text-white font-semibold'>Register</span>
-						</button>
+						<Link href='/register'>
+							<button className='w-[128px] rounded-full px-1 h-10 max-lg:hidden  bg-pw-purple hover:bg-pw-purple-hover border-pw-purple border-2'>
+								<span className=' text-white font-semibold'>Register</span>
+							</button>
+						</Link>
 
 						<button className='max-lg:flex hidden menu-button h-10 w-10'
 							onClick={() => {
