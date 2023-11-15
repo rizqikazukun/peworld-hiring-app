@@ -5,7 +5,6 @@ import React from 'react'
 import { Poppins } from 'next/font/google'
 import E404 from '@/components/E404'
 import { useRouter } from 'next/router'
-import Link from 'next/link'
 
 
 const poppins = Poppins({ subsets: ['latin'], weight: '400' })

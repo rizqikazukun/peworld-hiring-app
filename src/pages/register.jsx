@@ -56,13 +56,13 @@ export default function Register() {
 
 			{/* Register Form */}
 
-			<InputText id='name' labelName='Full Name' placeholder='Insert Full Name' />
+			<InputText id='name' labelName='Full Name' />
 			<InputEmail/>
-			<InputText id='company' labelName='Company Name' placeholder='Insert Company Name' />
-			<InputText id='position' labelName='Position' placeholder='Insert Your Position' />
-			<InputText id='phone' labelName='Phone Number' placeholder='Insert Phone Number' />
+			<InputText id='company' labelName='Company Name' />
+			<InputText id='position' labelName='Position'  />
+			<InputText id='phone' labelName='Phone Number' />
 			<InputPassword/>
-			<InputPassword id='password-confirm' labelName='Comfirm Password' placeholder='Confirm Your Password'/>
+			<InputPassword id='password-confirm' labelName='Comfirm Password' />
 
 			<button className=' bg-pw-orange hover:bg-pw-orange-hover block rounded-lg p-2'>
 				<span className='text-white'>Register</span>
