@@ -4,6 +4,9 @@ import Navbar from '@/components/Navbar'
 import React from 'react'
 import { Poppins } from 'next/font/google'
 import E404 from '@/components/E404'
+import InputText from '@/components/input/InputText'
+import InputEmail from '@/components/input/InputEmail'
+
 
 
 const poppins = Poppins({ subsets: ['latin'], weight: '400' })
@@ -30,7 +33,7 @@ export default function TalentDetail(props) {
 			<Navbar />
 
 			<div id='backgroundDecoration' className='mt-[80px] mx-auto flex flex-col w-full relative'>
-				<div className='h-[40vh] w-full bg-pw-purple absolute z-[0]'></div>
+				<div className='h-[40vh] w-full bg-transparent absolute z-[0]'></div>
 			</div>
 
 			{
@@ -53,10 +56,6 @@ export default function TalentDetail(props) {
 								<p className='text-sm text-pw-gray60'> <img className='inline my-[-1px]' src="/assets/icons/location.svg" alt="icon location" /> {detail?.location}</p>
 								<p className='text-sm text-pw-gray60 max-sm:text-justify'>{detail?.sort_description}</p>
 							</div>
-
-							<button id='button-hire' className='bg-pw-purple hover:bg-pw-purple-hover text-white rounded font-semibold py-2 shadow-md'>
-								Hire
-							</button>
 
 							<div id='talent-skills' className='flex flex-col gap-2'>
 								<h3 className='font-semibold  text-xl'>Skills</h3>
@@ -101,10 +100,12 @@ export default function TalentDetail(props) {
 
 						</div>
 
-						<div className='max-lg:col-span-6 col-span-4 bg-white p-10 m-5 rounded-xl shadow-xl z-10 flex justify-center items-center'>
-							<p className='text-2xl text-pw-purple font-bold text-center'>
-								Sorry, No content available for now.
-							</p>
+						<div className='max-lg:col-span-6 col-span-4 p-10 m-5 rounded-xl z-10 flex flex-col gap-3'>
+							<h1 className='text-4xl font-bold'>{`${detail.first_name} ${detail.last_name}`}</h1>
+							<p>{detail.sort_description}</p>
+
+							<InputText id='subject' labelName='Judul Penawaran' placeholder='Masukan Judul Penawaran'/>
+
 						</div>
 
 					</div>

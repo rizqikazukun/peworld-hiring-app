@@ -87,9 +87,7 @@ export default function TalentList(props) {
 				<div className='bg-pw-purple '>
 					<div id='title-container' className='container flex mx-auto'>
 						<p className='text-white font-semibold px-10 py-6 text-3xl'>
-							{
-								pageInfo.title
-							}
+							Talent List
 						</p>
 					</div>
 
