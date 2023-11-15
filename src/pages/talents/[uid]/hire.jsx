@@ -6,7 +6,7 @@ import { Poppins } from 'next/font/google'
 import E404 from '@/components/E404'
 import InputText from '@/components/input/InputText'
 import InputEmail from '@/components/input/InputEmail'
-
+import InputTextArea from '@/components/input/InputTextArea'
 
 
 const poppins = Poppins({ subsets: ['latin'], weight: '400' })
@@ -100,11 +100,22 @@ export default function TalentDetail(props) {
 
 						</div>
 
-						<div className='max-lg:col-span-6 col-span-4 p-10 m-5 rounded-xl z-10 flex flex-col gap-3'>
+						<div className=' max-lg:order-first max-lg:col-span-6 col-span-4 p-10 m-5 rounded-xl z-10 flex flex-col gap-3'>
+
 							<h1 className='text-4xl font-bold'>{`${detail.first_name} ${detail.last_name}`}</h1>
 							<p>{detail.sort_description}</p>
 
-							<InputText id='subject' labelName='Judul Penawaran' placeholder='Masukan Judul Penawaran'/>
+							<InputText id='subject' labelName='Offering Title' />
+							<InputText id='name' labelName='Full Name' />
+							<InputEmail />
+							<InputText id='phone' labelName='Phone Number' />
+							<InputTextArea id='message' labelName='Message' rows='5' />
+
+							<button className='p-2 my-2 rounded-lg bg-pw-orange hover:bg-pw-orange-hover'>
+								<span className='text-white text-lg'>
+									Send
+								</span>
+							</button>
 
 						</div>
 
