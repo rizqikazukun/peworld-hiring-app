@@ -6,7 +6,7 @@ export default function InputTextArea({id, labelName, rows, placeholder, onChang
 	onChange={onChange}>
 		<label htmlFor={id}>{labelName}</label>
 		<textarea id={id} rows={rows ? rows : 4} placeholder={placeholder ? placeholder : `Insert ${labelName}`}
-		className='focus:outline-none border-pw-gray20 border-2 rounded-md w-full p-2 h-10' />
+		className='focus:outline-none border-pw-gray20 border-2 rounded-md w-full p-2' />
 	</div>
   )
 }
