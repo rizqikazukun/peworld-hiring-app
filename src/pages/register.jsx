@@ -70,7 +70,7 @@ export default function Register() {
 
 			<div className='flex justify-center'>
 				<p>Anda sudah punya akun?
-					<Link href='/register'>
+					<Link href='/login'>
 						<span className=' text-pw-orange'>
 							{" "} Masuk disini
 						</span>

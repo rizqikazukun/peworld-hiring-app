@@ -3,7 +3,10 @@ import React from 'react'
 import { Poppins } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import Link from 'next/link'
+import InputEmail from '@/components/input/InputEmail'
+import InputPassword from '@/components/input/InputPassword'
 const poppins = Poppins({ subsets: ['latin'], weight: '400' })
+
 
 export default function Login() {
 	return (
@@ -50,16 +53,11 @@ export default function Login() {
 					</div>
 
 					{/* Login Form */}
-					<div className='flex flex-col gap-2'>
-						<label htmlFor="email">Email</label>
-						<input id='email' type="email" placeholder='Masukan alamat email'
-							className='focus:outline-none border-pw-gray20 border-2 rounded-md w-full p-2 h-10' />
-					</div>
-					<div className='flex flex-col gap-2'>
-						<label htmlFor="password">Password</label>
-						<input id='password' type="password" placeholder='Masukan password'
-							className='focus:outline-none border-pw-gray20 border-2 rounded-md w-full p-2 h-10' />
-					</div>
+
+					<InputEmail/>
+
+					<InputPassword/>
+
 
 					<p className=' text-right'>Lupa kata sandi?</p>
 					<button className=' bg-pw-orange hover:bg-pw-orange-hover h-10 rounded-lg'>
