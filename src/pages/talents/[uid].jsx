@@ -29,16 +29,18 @@ export default function TalentDetail(props) {
 		<div id='page-TalentDetail' className={poppins.className} style={{ backgroundColor: '#eaeaea' }} >
 			<Navbar />
 
-			<div id='backgroundDecoration' className='mt-[89px] mx-auto flex flex-col w-full relative'>
+			<div id='backgroundDecoration' className='mt-[80px] mx-auto flex flex-col w-full relative'>
 				<div className='h-[40vh] w-full bg-pw-purple absolute z-[0]'></div>
 			</div>
 
 			{
 				props.data.status === 404 ?
-					<div className='container mx-auto grid grid-cols-6 mt-14 mb-10'>
-						<E404 className='col-span-6 bg-white p-10 m-5 rounded-xl shadow-xl z-10 flex flex-col gap-10 items-center justify-center  min-h-[500px]' message='Sorry, No Talent Found.' />
+					<div className='container mx-auto grid grid-cols-6 my-10'>
+						<E404
+							className='col-span-6 bg-white p-10 m-5 rounded-xl shadow-xl z-10 flex flex-col gap-10 items-center justify-center  min-h-[500px]'
+							message='Sorry, No Talent Found.' />
 					</div> :
-					<div className='container mx-auto grid grid-cols-6 mt-14 mb-10'>
+					<div className='container mx-auto grid grid-cols-6 my-10'>
 
 						<div className='max-lg:col-span-6 col-span-2 bg-white p-10 m-5 rounded-xl shadow-xl z-10 flex flex-col gap-8'>
 

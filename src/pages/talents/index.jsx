@@ -82,7 +82,7 @@ export default function TalentList(props) {
 					}
 				</title>
 			</Head>
-			<main className='mx-auto mt-[87px] ' >
+			<main className='mx-auto mt-[80px] ' >
 
 				<div className='bg-pw-purple '>
 					<div id='title-container' className='container flex mx-auto'>
