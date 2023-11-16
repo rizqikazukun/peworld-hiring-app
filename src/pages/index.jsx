@@ -42,7 +42,7 @@ export default function Home() {
 
       <main className='container mx-auto lg:mt-[12vh] max-sm:w-[88%]'>
 
-     
+
         {/* hero section */}
         <section id='hero-section' className='scroll-helper grid grid-cols-2 max-md:grid-cols-1 mb-16 max-md:mt-24 mt-36'>
           <div className='flex items-center justify-self-center max-lg:items-center max-md:w-[80vw] lg:max-w-[50vw] xl:max-w-[28vw] p-3'>

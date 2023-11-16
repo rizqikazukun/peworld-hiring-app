@@ -55,14 +55,14 @@ export default function TalentDetail(props) {
 								<p className='text-sm text-pw-gray60'> <img className='inline my-[-1px]' src="/assets/icons/location.svg" alt="icon location" /> {detail?.location}</p>
 								<p className='text-sm text-pw-gray60 max-sm:text-justify'>{detail?.desc}</p>
 							</div>
-							
-								<button id='button-hire' className='bg-pw-purple hover:bg-pw-purple-hover text-white rounded font-semibold py-2 shadow-md'
-									onClick={()=>{
-										router.push(`/talents/${detail.user_uid}/hire`)
-									}}>
-									Hire
-								</button>
-							
+
+							<button id='button-hire' className='bg-pw-purple hover:bg-pw-purple-hover text-white rounded font-semibold py-2 shadow-md'
+								onClick={() => {
+									router.push(`/talents/${detail.user_uid}/hire`)
+								}}>
+								Hire
+							</button>
+
 							<div id='talent-skills' className='flex flex-col gap-2'>
 								<h3 className='font-semibold  text-xl'>Skills</h3>
 								<div className='flex flex-wrap gap-2 text-white'>

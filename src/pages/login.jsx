@@ -54,9 +54,9 @@ export default function Login() {
 
 					{/* Login Form */}
 
-					<InputEmail/>
+					<InputEmail />
 
-					<InputPassword/>
+					<InputPassword />
 
 
 					<p className=' text-right'>Lupa kata sandi?</p>
