@@ -2,16 +2,16 @@
 
 const db = [
   {
+    "id": 1,
     "user_uid": "8a17713d-8e44-4c8e-9063-535dc15692fa",
-    "first_name": "Rizqi",
-    "last_name": "Pratama",
-    "job_title": "Fullstack Developer",
+    "fullname": "Rizqi Pratama",
+    "job": "Fullstack Developer",
     "location": "Jakarta, Indonesia.",
     "job_time_preferece": "Full-time",
-    "sort_description": "Rizqi adalah seorang fullstack developer dari bootacamp fullstack and mobile batch 15 Pijarcamp ",
+    "desc": "Rizqi adalah seorang fullstack developer dari bootacamp fullstack and mobile batch 15 Pijarcamp ",
     "photo": "https://res.cloudinary.com/owncloudinarycdn/image/upload/v1699695837/y8ycssboowbwuaogprhj.jpg",
-    "skills": ["Javascript", "ExpressJS","ReactJS", "NextJS" ],
-    "social": {
+    "skills": ["Javascript", "ExpressJS", "ReactJS", "NextJS"],
+    "socmed": {
       "email": "rizqipratama@example.com",
       "github": "rizqikazukun",
     },
@@ -24,16 +24,16 @@ const db = [
     }],
   },
   {
+    "id": 2,
     "user_uid": "8a17713d-8e44-4c8e-9063-535dc15692fe",
-    "first_name": "Uzumaki",
-    "last_name": "Naruto",
-    "job_title": "Fullstack Developer",
+    "fullname": "Uzumaki Naruto",
+    "job": "Fullstack Developer",
     "location": "Tokyo, Japan.",
     "job_time_preferece": "Full-time",
-    "sort_description": "Naruto adalah seorang fullstack developer yang pernah bekerja di salah satu startup besar yang berada dijepang",
+    "desc": "Naruto adalah seorang fullstack developer yang pernah bekerja di salah satu startup besar yang berada dijepang",
     "photo": "https://akcdn.detik.net.id/community/media/visual/2023/06/04/karakter-naruto-versi-ai-tsunade-tampak-mudah-dan-hinata-kawaii-banget-10.jpeg",
     "skills": ["Java Script", "NextJS", "ExpressJS"],
-    "social": {
+    "socmed": {
       "email": "uzumakinaruto@example.com",
       "instagram": "uzumaki_naruto",
       "github": "uzumaki_naruto",
@@ -48,16 +48,16 @@ const db = [
     }],
   },
   {
+    "id": 3,
     "user_uid": "9e87369a-0c86-4ec4-b79c-1e7652222d64",
-    "first_name": "Uciha",
-    "last_name": "Sasuke",
-    "job_title": "UX Researcher",
+    "fullname": "Uciha Sasuke",
+    "job": "UX Researcher",
     "location": "Tokyo, Japan",
     "job_time_preferece": "Freelancer",
-    "sort_description": "Sasuke adalah seorang UX Researcher yang pernah bekerja di salah satu startup besar yang berada dijepang",
+    "desc": "Sasuke adalah seorang UX Researcher yang pernah bekerja di salah satu startup besar yang berada dijepang",
     "photo": "https://akcdn.detik.net.id/community/media/visual/2023/06/04/karakter-naruto-versi-ai-tsunade-tampak-mudah-dan-hinata-kawaii-banget-9.jpeg",
     "skills": ["Analytical Thinking"],
-    "social": {
+    "socmed": {
       "email": "ucihasasuke@example.com",
       "instagram": "uciha_saskuke",
       "github": "uciha_saskuke",
@@ -72,16 +72,16 @@ const db = [
     }],
   },
   {
+    "id": 4,
     "user_uid": "00ed4731-5fae-4eac-b62f-2300c1de4568",
-    "first_name": "Haruno",
-    "last_name": "Sakura",
-    "job_title": "UI Designer",
+    "fullname": "Haruno Sakura",
+    "job": "UI Designer",
     "location": "Tokyo, Japan",
     "job_time_preferece": "Freelancer",
-    "sort_description": "Sakura adalah seorang UI Designer yang pernah bekerja di salah satu startup besar yang berada dijepang",
+    "desc": "Sakura adalah seorang UI Designer yang pernah bekerja di salah satu startup besar yang berada dijepang",
     "photo": "https://akcdn.detik.net.id/community/media/visual/2023/06/04/karakter-naruto-versi-ai-tsunade-tampak-mudah-dan-hinata-kawaii-banget-8.jpeg",
     "skills": ["Figma", "Adobe Ilustrator"],
-    "social": {
+    "socmed": {
       "email": "harunosakura@example.com",
       "instagram": "haruno_sakura",
       "github": "haruno_sakura",
@@ -96,16 +96,16 @@ const db = [
     }],
   },
   {
+    "id": 5,
     "user_uid": "2f8bec95-b174-4703-ae47-29b2ee101ceb",
-    "first_name": "Hatake",
-    "last_name": "Kakashi",
-    "job_title": "SCRUM Master",
+    "fullname": "Hatake Kakashi",
+    "job": "SCRUM Master",
     "location": "Tokyo, Japan",
     "job_time_preferece": "Full-time",
-    "sort_description": "Kakashi adalah seorang SCRUM Master yang pernah bekerja di salah satu startup besar yang berada dijepang",
+    "desc": "Kakashi adalah seorang SCRUM Master yang pernah bekerja di salah satu startup besar yang berada dijepang",
     "photo": "https://akcdn.detik.net.id/community/media/visual/2023/06/04/karakter-naruto-versi-ai-tsunade-tampak-mudah-dan-hinata-kawaii-banget-7.jpeg",
     "skills": ["Leadership", "Project Management", "Communication"],
-    "social": {
+    "socmed": {
       "email": "hatakekakashi@example.com",
       "instagram": "hatake_kakashi",
       "github": "hatake_kakashi",
@@ -120,16 +120,16 @@ const db = [
     }],
   },
   {
+    "id": 6,
     "user_uid": "19990e21-82b8-493b-8a75-4687b6d35410",
-    "first_name": "Jiraya",
-    "last_name": "Jiraya",
-    "job_title": "Copywriter",
+    "fullname": "Jiraya",
+    "job": "Copywriter",
     "location": "Tokyo, Japan",
     "job_time_preferece": "Full-time",
-    "sort_description": "Kakashi adalah seorang Copywriter yang pernah bekerja di salah satu startup besar yang berada dijepang",
+    "desc": "Kakashi adalah seorang Copywriter yang pernah bekerja di salah satu startup besar yang berada dijepang",
     "photo": "https://akcdn.detik.net.id/community/media/visual/2023/06/04/karakter-naruto-versi-ai-tsunade-tampak-mudah-dan-hinata-kawaii-banget-5.jpeg",
     "skills": ["10 Finger Typing", "374 Word Per Minute Typing", "Wide Knowledge"],
-    "social": {
+    "socmed": {
       "email": "jiraya@example.com",
       "instagram": "jiraya",
       "github": "jiraya",
@@ -144,16 +144,16 @@ const db = [
     }],
   },
   {
+    "id": 7,
     "user_uid": "074d0d58-4924-48ca-adef-4ff79a3ba42e",
-    "first_name": "Hyuuga",
-    "last_name": "Hinata",
-    "job_title": "Frontend Developer",
+    "fullname": "Hyuuga Hinata",
+    "job": "Frontend Developer",
     "location": "Tokyo, Japan",
     "job_time_preferece": "Part-time",
-    "sort_description": "Hinata adalah seorang Frontend Developer yang pernah bekerja di salah satu startup besar yang berada dijepang",
+    "desc": "Hinata adalah seorang Frontend Developer yang pernah bekerja di salah satu startup besar yang berada dijepang",
     "photo": "https://res.cloudinary.com/owncloudinarycdn/image/upload/v1699765668/utg8bgkttdsvuv1lid33.jpg",
     "skills": ["ReactJS", "Bootstrap", "Tailwind"],
-    "social": {
+    "socmed": {
       "email": "hyuugahinata@example.com",
       "instagram": "hyuuga_hinata",
       "github": "hyuuga_hinata",
@@ -175,7 +175,7 @@ export default function handler(req, res) {
     const { uid } = req.query
 
     let data
-    
+
     if (uid !== undefined) {
       const searchData = db.find(item => item.user_uid === uid)
       if (searchData === undefined) {

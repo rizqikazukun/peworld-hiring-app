@@ -37,12 +37,12 @@ export default function TalentList(props) {
 				if (item.location.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())) {
 					displayData.push(item)
 				}
-			} else if (searchBy === 'job_title') {
-				if (item.job_title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())) {
+			} else if (searchBy === 'job') {
+				if (item.job.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())) {
 					displayData.push(item)
 				}
 			} else if (searchBy === 'name') {
-				if (String(`${item.first_name} ${item.last_name}`).toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())) {
+				if (String(`${item.fullname} `).toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())) {
 					displayData.push(item)
 				}
 
@@ -52,8 +52,8 @@ export default function TalentList(props) {
 				}
 			} else {
 				if (item.location.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()) ||
-					String(`${item.first_name} ${item.last_name}`).toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()) ||
-					item.job_title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()) ||
+					String(`${item.fullname} `).toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()) ||
+					item.job.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase()) ||
 					item.skills.join(', ').toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())) {
 					displayData.push(item)
 				}
@@ -138,7 +138,7 @@ export default function TalentList(props) {
 										}}>
 										<option value="skills">Skill</option>
 										<option value="location">Location</option>
-										<option value="job_title">Job Title</option>
+										<option value="job">Job Title</option>
 										<option value="name">name</option>
 									</select>
 								</div>
@@ -198,13 +198,13 @@ export default function TalentList(props) {
 										{/* talent-list-photo */}
 										<div className='col-span-1 flex items-center'>
 											<img className='max-sm:h-[160px] h-[100%] w-[100%] object-cover object-top rounded-md aspect-square shadow-md'
-												src={talent.photo} alt={`photo ${talent.last_name}`} />
+												src={talent.photo} alt={`photo ${talent.fullname}`} />
 										</div>
 
 										{/* Talent List info */}
 										<div className='max-lg:col-span-2 col-span-3 p-5 h-fit flex flex-col max-lg:gap-1 lg:gap-2'>
-											<p className='font-semibold  text-xl'>{`${talent?.first_name} ${talent?.last_name === talent?.first_name ? "" : talent?.last_name}`}</p>
-											<p className='text-sm text-pw-gray60'>{talent?.job_title}</p>
+											<p className='font-semibold  text-xl'>{`${talent?.fullname}`}</p>
+											<p className='text-sm text-pw-gray60'>{talent?.job}</p>
 											<p className='text-sm text-pw-gray60'> <img className='inline my-[-1px]' src="/assets/icons/location.svg" alt="icon location" /> {talent?.location}</p>
 											<div className='flex flex-wrap gap-2 text-white'>{talent?.skills?.map((skill, index) => (
 												<span key={index} className='p-1 bg-pw-orange rounded shadow font-medium'>{skill}

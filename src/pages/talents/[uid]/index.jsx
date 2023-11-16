@@ -46,14 +46,14 @@ export default function TalentDetail(props) {
 
 						<div className='max-lg:col-span-6 col-span-2 bg-white p-10 m-5 rounded-xl shadow-xl z-10 flex flex-col gap-8'>
 
-							<img id='talent-photo' src={detail?.photo} alt={detail?.last_name} className='w-[200px] h-[200px] object-cover object-top rounded-full self-center shadow-xl' />
+							<img id='talent-photo' src={detail?.photo} alt={detail?.fullname} className='w-[200px] h-[200px] object-cover object-top rounded-full self-center shadow-xl' />
 
 							<div id='talent-info' className='flex flex-col gap-2'>
-								<p className='font-semibold  text-xl'>{`${detail?.first_name ?? ""} ${detail?.last_name === detail?.first_name ? "" : detail?.last_name}`}</p>
-								<p className='text-sm text-pw-gray60'>{detail?.job_title}</p>
+								<p className='font-semibold  text-xl'>{`${detail?.fullname ?? ""}`}</p>
+								<p className='text-sm text-pw-gray60'>{detail?.job}</p>
 								<p className='text-sm text-pw-gray60'>{detail?.job_time_preferece}</p>
 								<p className='text-sm text-pw-gray60'> <img className='inline my-[-1px]' src="/assets/icons/location.svg" alt="icon location" /> {detail?.location}</p>
-								<p className='text-sm text-pw-gray60 max-sm:text-justify'>{detail?.sort_description}</p>
+								<p className='text-sm text-pw-gray60 max-sm:text-justify'>{detail?.desc}</p>
 							</div>
 							
 								<button id='button-hire' className='bg-pw-purple hover:bg-pw-purple-hover text-white rounded font-semibold py-2 shadow-md'
@@ -80,7 +80,7 @@ export default function TalentDetail(props) {
 
 								<h3 className='font-semibold  text-xl'>Contact</h3>
 								{
-									detail?.social === undefined ? "" : Object.entries(detail.social).map((item, index) => {
+									detail?.socmed === undefined ? "" : Object.entries(detail.socmed).map((item, index) => {
 
 										const [key, value] = item
 
