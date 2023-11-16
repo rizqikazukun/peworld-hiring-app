@@ -123,7 +123,7 @@ export default function TalentList(props) {
 
 							<input className='w-full sm:block focus:outline-none max-sm:text-center'
 								type="search" placeholder='Search for any skill'
-								value={searchParams.get('search') ?? ''}
+								// value={searchParams.get('search') ?? ''}
 								onChange={(e) => {
 									setSearch(e.target.value)
 									router.push(`${window.location.pathname}?${createQueryString('search', e.target.value)}`)
