@@ -114,13 +114,13 @@ export default function TalentDetail(props) {
 
 						<div className=' max-lg:order-first max-lg:col-span-6 col-span-4 p-10 m-5 rounded-xl z-10 flex flex-col gap-3'>
 
-							<h1 className='text-4xl font-bold'>{`${detail.fullname}`}</h1>
+							<h1 className='text-4xl font-bold'>{`Hubungi ${detail.fullname}`}</h1>
 							<p>{detail.desc}</p>
 
 							<InputText id='subject' labelName='Offering Title' />
-							<InputText id='name' labelName='Full Name' />
+							{/* <InputText id='name' labelName='Full Name' />
 							<InputEmail />
-							<InputText id='phone' labelName='Phone Number' />
+							<InputText id='phone' labelName='Phone Number' /> */}
 							<InputTextArea id='message' labelName='Message' rows='5' />
 
 							<button className='p-2 my-2 rounded-lg bg-pw-orange hover:bg-pw-orange-hover'>
@@ -142,7 +142,7 @@ export default function TalentDetail(props) {
 
 export async function getServerSideProps({ params }) {
 	const { uid } = params
-	const res = await fetch(`${process.env.BE_URL}/api/talents?uid=${uid}`)
+	const res = await fetch(`${process.env.BASE_URL}/api/talents?uid=${uid}`)
 	const data = await res.json()
 	return { props: { data } }
 }

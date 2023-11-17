@@ -135,7 +135,7 @@ export default function TalentDetail(props) {
 
 export async function getServerSideProps({ params }) {
 	const { uid } = params
-	const res = await fetch(`${process.env.BE_URL}/api/talents?uid=${uid}`)
+	const res = await fetch(`${process.env.BASE_URL}/api/talents?uid=${uid}`)
 	const data = await res.json()
 	return { props: { data } }
 }

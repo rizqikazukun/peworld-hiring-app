@@ -315,7 +315,7 @@ export default function TalentList(props) {
 }
 
 export async function getServerSideProps() {
-	const res = await fetch(`${process.env.BE_URL}/api/talents`)
+	const res = await fetch(`${process.env.BASE_URL}/api/talents`)
 	const data = await res.json()
 	return { props: { data } }
 }
