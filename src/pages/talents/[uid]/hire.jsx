@@ -98,6 +98,18 @@ export default function TalentDetail(props) {
 								}
 							</div>
 
+							{
+								String(detail.fullname).includes('Rizqi') ? "" :
+									<div id='disclaimer' >
+										<p className=' text-xs text-pw-gray60 font-bold'>Disclaimer :</p>
+										<p className=' text-xs text-pw-gray40'>
+											The name, description, and other content is not real name and data.
+											The photo is an <a className=' text-sky-400' href="https://www.freepik.com/ai/images">
+												AI generated Image By Freepik.</a> and just for educational purpose.
+										</p>
+									</div>
+							}
+
 						</div>
 
 						<div className=' max-lg:order-first max-lg:col-span-6 col-span-4 p-10 m-5 rounded-xl z-10 flex flex-col gap-3'>
