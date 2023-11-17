@@ -5,10 +5,71 @@ import Navbar from '@/components/Navbar'
 import Link from 'next/link'
 import InputEmail from '@/components/input/InputEmail'
 import InputPassword from '@/components/input/InputPassword'
+import axios from 'axios'
 const poppins = Poppins({ subsets: ['latin'], weight: '400' })
+import { hasCookie, setCookie } from 'cookies-next';
+import { useRouter } from 'next/router'
+import AuthButton from '@/components/button/AuthButton'
 
 
-export default function Login() {
+export default function Login(props) {
+
+	const [email, setEmail] = React.useState('')
+	const [password, setPassword] = React.useState('')
+	const [loading, setLoading] = React.useState(false)
+
+	const [inputErr, setInputErr] = React.useState(undefined)
+	const [authErr, setAuthErr] = React.useState(undefined)
+
+	const router = useRouter()
+
+	const handleLogin = async () => {
+		try {
+			setLoading(true)
+			const result = await axios({
+				method: 'post',
+				url: `${props.BE_URL}/auth/login`,
+				data: {
+					email,
+					password
+				}
+			})
+
+			setCookie('user', JSON.stringify(result.data.data.user))
+			setCookie('token', 'Bearer ' + result.data.data.token)
+
+		} catch (error) {
+
+			if (error.response.status === 422) {
+				setInputErr(error.response.data.messages)
+			} else if (error.response.status === 400) {
+				setAuthErr(error.response.data.messages)
+			}
+
+		} finally {
+			setLoading(false)
+		}
+	}
+
+	React.useEffect(() => {
+
+		if (hasCookie('user') &&
+			hasCookie('token')) {
+			router.push('/')
+		}
+
+		if (authErr !== undefined || inputErr !== undefined) {
+			console.log(authErr)
+			console.log(inputErr)
+			setTimeout(() => {
+				setAuthErr(undefined)
+				setInputErr(undefined)
+			}, 2000)
+		}
+	}, [inputErr, authErr, loading, router]
+	)
+
+
 	return (
 		<div id='Login' className={poppins.className}>
 
@@ -52,17 +113,34 @@ export default function Login() {
 						</p>
 					</div>
 
+					<div className='w-full rounded-md bg-red-200 p-3' hidden={inputErr === undefined && authErr === undefined}>
+						{
+							authErr ? authErr : ''
+						}
+
+						{
+							inputErr ? `${inputErr.email?.message}  ` : ''
+						}
+						
+						{
+							inputErr ? inputErr.password?.message : ''
+						}
+					</div>
+
 					{/* Login Form */}
 
-					<InputEmail />
+					<InputEmail onChange={(e) => {
+						setEmail(e.target.value)
+					}} />
 
-					<InputPassword />
-
+					<InputPassword onChange={(e) => {
+						setPassword(e.target.value)
+					}} />
 
 					<p className=' text-right'>Lupa kata sandi?</p>
-					<button className=' bg-pw-orange hover:bg-pw-orange-hover h-10 rounded-lg'>
-						<span className='text-white font-semibold'>login</span>
-					</button>
+
+					<AuthButton type='login' loadingIndicator={loading} onClick={handleLogin} />
+
 
 					<div className='flex justify-center'>
 						<p>Anda belum punya akun?
@@ -79,4 +157,20 @@ export default function Login() {
 			</div>
 		</div>
 	)
+}
+
+
+export async function getServerSideProps({ req, res }) {
+
+	if (hasCookie('user', { req, res }) &&
+		hasCookie('token', { req, res })) {
+		return {
+			redirect: {
+				permanent: false,
+				destination: '/'
+			}
+		}
+	}
+
+	return { props: { BE_URL: process.env.BE_URL } }
 }
