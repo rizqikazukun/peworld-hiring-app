@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
 
-export default function AuthButton({ type, onClick, loadingIndicator }) {
+export default function AuthButton({ type, onClick, loadingIndicator, disabled }) {
 	return (
-		<button className=' bg-pw-orange hover:bg-pw-orange-hover h-10 rounded-lg p-2'
-			onClick={onClick}>
+		<button className=' bg-pw-orange hover:bg-pw-orange-hover h-10 rounded-lg p-2 disabled:bg-pw-gray60'
+			onClick={onClick} disabled={disabled}>
 			{
 				loadingIndicator ?
 					<p className='text-white font-semibold'>
