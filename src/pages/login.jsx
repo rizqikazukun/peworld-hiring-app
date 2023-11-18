@@ -104,10 +104,12 @@ export default function Login(props) {
 
 
 					{/* login title */}
-					<div className='flex flex-col gap-3'>
-						<p className=' text-4xl font-semibold'>
-							Halo, Pewpeople
+					<div className='flex flex-col gap-6 max-sm:text-center'>
+
+						<p className='text-3xl font-semibold text-pw-purple max-sm:leading-[3.4rem]'>
+							Login As <span className='p-2 bg-pw-purple text-white rounded-full'>Recruiter</span>
 						</p>
+
 						<p>
 							Temukan talent berbakat & terbaik di berbagai bidang keahlian
 						</p>
