@@ -17,7 +17,7 @@ const db = [
       "NextJS"
     ],
     "socmed": {
-      "email": "rizqipratama@example.com",
+      "email": "rizqi.mailsos@gmail.com",
       "github": "rizqikazukun"
     }
   },
