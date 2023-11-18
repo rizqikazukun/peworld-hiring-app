@@ -5,17 +5,63 @@ import React from 'react'
 import { Poppins } from 'next/font/google'
 import E404 from '@/components/E404'
 import InputText from '@/components/input/InputText'
-import InputEmail from '@/components/input/InputEmail'
 import InputTextArea from '@/components/input/InputTextArea'
 import Head from 'next/head'
+import { getCookie, hasCookie } from 'cookies-next'
+import axios from 'axios'
+import AuthButton from '@/components/button/AuthButton'
 
 const poppins = Poppins({ subsets: ['latin'], weight: '400' })
-
 
 export default function TalentDetail(props) {
 	const [detail, setDetail] = React.useState({})
 
-	console.log(props)
+	const defaultTitle = 'Offering Pekerjaan'
+	const defaultDescription = `Halo ${props.data.data.fullname}, perkenalkan saya ${props.recruiter.fullname}, ${props.recruiter.job_title} dari ${props.recruiter.company} ingin menawarkan posisi "_____", jika bersedia silahkan hubungi nomor berikut : ${props.recruiter.phone}`
+
+	const [subject, setSubject] = React.useState(defaultTitle)
+	const [description, setDescription] = React.useState(defaultDescription)
+	const [loading, setLoading] = React.useState(false)
+	const [sent, setSent] = React.useState(false)
+
+	// const [inputErr, setInputErr] = React.useState(undefined)
+	// const [authErr, setAuthErr] = React.useState(undefined)
+
+	const handleOffer = async () => {
+		try {
+			setLoading(true)
+
+			await axios({
+				method: 'post',
+				url: `${props.BE_URL}/contact`,
+				data: {
+					to: detail?.socmed?.email,
+					toName: detail?.fullname,
+					sender: '',
+					subject,
+					description
+				},
+				headers: {
+					Authorization: props.token
+				}
+			})
+
+			setSent(true)
+
+		} catch (error) {
+
+			console.log(error)
+
+			// if (error.response.status === 422) {
+			// 	setInputErr(error.response.data.messages)
+			// } else if (error.response.status === 400) {
+			// 	setAuthErr(error.response.data.messages)
+			// }
+
+		} finally {
+			setLoading(false)
+		}
+	}
 
 	React.useEffect(() => {
 
@@ -23,8 +69,14 @@ export default function TalentDetail(props) {
 			setDetail(props.data.data)
 		}
 
+		if (sent) {
+			setTimeout(() => {
+				setSent(false)
+			}, 5000)
+		}
 
-	}, [detail, props.data.data, props.user_uid])
+
+	}, [detail, props.data.data, props.user_uid, sent])
 
 
 
@@ -124,17 +176,19 @@ export default function TalentDetail(props) {
 							<h1 className='text-4xl font-bold'>{`Hubungi ${detail.fullname}`}</h1>
 							<p>{detail.desc}</p>
 
-							<InputText id='subject' labelName='Offering Title' />
-							{/* <InputText id='name' labelName='Full Name' />
-							<InputEmail />
-							<InputText id='phone' labelName='Phone Number' /> */}
-							<InputTextArea id='message' labelName='Message' rows='5' />
+							<InputText id='subject' labelName='Offering Title'
+								defaultValue={defaultTitle}
+								onChange={e => setSubject(e.target.value)} />
 
-							<button className='p-2 my-2 rounded-lg bg-pw-orange hover:bg-pw-orange-hover'>
-								<span className='text-white text-lg'>
-									Send
-								</span>
-							</button>
+							<InputTextArea id='message' labelName='Message' rows='8'
+								defaultValue={defaultDescription}
+								onChange={e => setDescription(e.target.value)} />
+
+							<div className='p-3 rounded-md bg-emerald-200 text-center' hidden={sent ? false : true}>
+								Offering Sent
+							</div>
+
+							<AuthButton onClick={handleOffer} disabled={loading} loadingIndicator={loading} text='Send' />
 
 						</div>
 
@@ -142,14 +196,31 @@ export default function TalentDetail(props) {
 			}
 
 			<Footer />
+			
 		</div>
 	)
 }
 
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params, req, res }) {
+
 	const { uid } = params
-	const res = await fetch(`${process.env.BASE_URL}/api/talents?uid=${uid}`)
-	const data = await res.json()
-	return { props: { data } }
+
+	if (!(hasCookie('user', { req, res }) &&
+		hasCookie('token', { req, res }))) {
+		return {
+			redirect: {
+				permanent: false,
+				destination: `/talents/${uid}`
+			}
+		}
+	}
+
+	const recruiter = JSON.parse(getCookie('user', { req, res }))
+	const token = getCookie('token', { req, res })
+
+	const result = await fetch(`${process.env.BASE_URL}/api/talents?uid=${uid}`)
+	const data = await result.json()
+
+	return { props: { data, recruiter, token, BE_URL: process.env.BE_URL } }
 }
