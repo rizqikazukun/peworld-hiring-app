@@ -7,7 +7,7 @@ import E404 from '@/components/E404'
 import InputText from '@/components/input/InputText'
 import InputEmail from '@/components/input/InputEmail'
 import InputTextArea from '@/components/input/InputTextArea'
-
+import Head from 'next/head'
 
 const poppins = Poppins({ subsets: ['latin'], weight: '400' })
 
@@ -30,6 +30,13 @@ export default function TalentDetail(props) {
 
 	return (
 		<div id='page-TalentDetail' className={poppins.className} style={{ backgroundColor: '#eaeaea' }} >
+
+			<Head>
+				<title>
+					Hire | Peworld
+				</title>
+			</Head>
+
 			<Navbar />
 
 			<div id='backgroundDecoration' className='mt-[80px] mx-auto flex flex-col w-full relative'>

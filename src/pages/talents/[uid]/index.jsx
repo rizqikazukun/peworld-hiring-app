@@ -5,6 +5,7 @@ import React from 'react'
 import { Poppins } from 'next/font/google'
 import E404 from '@/components/E404'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 
 const poppins = Poppins({ subsets: ['latin'], weight: '400' })
@@ -29,6 +30,13 @@ export default function TalentDetail(props) {
 
 	return (
 		<div id='page-TalentDetail' className={poppins.className} style={{ backgroundColor: '#eaeaea' }} >
+
+			<Head>
+				<title>
+					{props.data.data.fullname} | Peworld
+				</title>
+			</Head>
+
 			<Navbar />
 
 			<div id='backgroundDecoration' className='mt-[80px] mx-auto flex flex-col w-full relative'>

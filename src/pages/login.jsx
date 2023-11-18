@@ -10,6 +10,7 @@ const poppins = Poppins({ subsets: ['latin'], weight: '400' })
 import { hasCookie, setCookie } from 'cookies-next';
 import { useRouter } from 'next/router'
 import AuthButton from '@/components/button/AuthButton'
+import Head from 'next/head'
 
 
 export default function Login(props) {
@@ -72,6 +73,12 @@ export default function Login(props) {
 
 	return (
 		<div id='Login' className={poppins.className}>
+
+			<Head>
+				<title>
+					Recruiter Login | Peworld
+				</title>
+			</Head>
 
 			<div className='lg:hidden'>
 				<Navbar />

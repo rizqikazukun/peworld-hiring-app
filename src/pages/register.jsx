@@ -10,6 +10,7 @@ import { hasCookie } from 'cookies-next'
 import { useRouter } from 'next/router'
 import AuthButton from '@/components/button/AuthButton'
 import axios from 'axios'
+import Head from 'next/head'
 const poppins = Poppins({ subsets: ['latin'], weight: '400' })
 
 
@@ -109,6 +110,12 @@ export default function Register(props) {
 	return (
 		<div id='Login' className={poppins.className}>
 
+			<Head>
+				<title>
+					Recruiter Register | Peworld
+				</title>
+			</Head>
+
 			<div className='lg:hidden'>
 				<Navbar />
 			</div>
@@ -143,7 +150,7 @@ export default function Register(props) {
 						<div className='flex flex-col gap-5 my-5 text-center'>
 							<p className='text-4xl font-semibold text-pw-purple max-sm:leading-[3.8rem]'>
 								<span className='py-1 px-2 bg-pw-purple text-white rounded-lg'>Recruiter</span>
-								 {' '}Register
+								{' '}Register
 							</p>
 						</div>
 
