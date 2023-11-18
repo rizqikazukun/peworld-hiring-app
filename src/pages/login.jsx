@@ -88,7 +88,7 @@ export default function Login(props) {
 
 				<div className='max-lg:hidden flex flex-col justify-between w-[50vw] bg-pw-purple-hover  
 								 bg-[url("/assets/images/banner-auth.png")] 
-								bg-center bg-cover bg-blend-soft-light p-14'>
+								bg-center bg-cover bg-blend-soft-light p-14 rounded-xl'>
 
 					<Link href='/'>
 						<img className=' w-40' src="/peworld-white-wo-bg.svg" alt="logo peworld" />
