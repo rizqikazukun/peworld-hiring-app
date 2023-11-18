@@ -211,7 +211,7 @@ export async function getServerSideProps({ params, req, res }) {
 		return {
 			redirect: {
 				permanent: false,
-				destination: `/talents/${uid}`
+				destination: `/talents/${uid}/notice`
 			}
 		}
 	}
