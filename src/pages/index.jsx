@@ -10,25 +10,6 @@ const poppins = Poppins({ subsets: ['latin'], weight: '400' })
 
 export default function Home() {
 
-  const [listView, setListView] = React.useState(undefined)
-
-  React.useEffect(() => {
-
-    const list = []
-    document.querySelectorAll('.scroll-helper').forEach(element => {
-      list
-        .push(element.getBoundingClientRect().y)
-    })
-
-    if (listView === undefined) {
-      setListView(list)
-    }
-
-
-  }, [listView])
-
-
-
   return (
     <div id='page-home' className={poppins.className}>
 
