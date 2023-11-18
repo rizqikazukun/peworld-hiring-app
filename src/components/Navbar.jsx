@@ -77,7 +77,8 @@ export default function Navbar() {
 						}}>
 
 						{
-							user !== undefined ? <img className='m-auto w-full rounded-full' src='/assets/icons/profile.svg' alt="menu" /> :
+							login ?
+								<img className='m-auto w-full rounded-full' src='/assets/icons/profile.svg' alt="menu" /> :
 								<img className='m-auto w-full' src="/burger-menu.svg" alt="menu" />
 						}
 
