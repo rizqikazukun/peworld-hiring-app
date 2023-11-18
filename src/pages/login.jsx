@@ -104,14 +104,12 @@ export default function Login(props) {
 
 
 					{/* login title */}
-					<div className='flex flex-col gap-5 mt-5 text-center'>
-							<p className='text-4xl font-semibold text-pw-purple max-sm:leading-[3.8rem]'>
-								Login as <span className='py-1 px-2 bg-pw-purple text-white rounded-lg'>Recruiter</span>
-							</p>
-							<p>
-								Temukan talent berbakat & terbaik di berbagai bidang keahlian
-							</p>
-						</div>
+					<div className='flex flex-col gap-5 my-5 text-center'>
+						<p className='text-4xl font-semibold text-pw-purple max-sm:leading-[3.8rem]'>
+							<span className='py-1 px-2 bg-pw-purple text-white rounded-lg'>Recruiter</span>
+							{' '}Login
+						</p>
+					</div>
 
 					<div className='w-full rounded-md bg-red-200 p-3' hidden={inputErr === undefined && authErr === undefined}>
 						{
@@ -121,7 +119,7 @@ export default function Login(props) {
 						{
 							inputErr ? `${inputErr.email?.message}  ` : ''
 						}
-						
+
 						{
 							inputErr ? inputErr.password?.message : ''
 						}

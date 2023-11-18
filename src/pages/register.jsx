@@ -140,12 +140,10 @@ export default function Register(props) {
 					<div className='flex flex-col h-full gap-8 overflow-y-auto'>
 
 						{/* Register title */}
-						<div className='flex flex-col gap-5 mt-5 text-center'>
+						<div className='flex flex-col gap-5 my-5 text-center'>
 							<p className='text-4xl font-semibold text-pw-purple max-sm:leading-[3.8rem]'>
-								Register as <span className='py-1 px-2 bg-pw-purple text-white rounded-lg'>Recruiter</span>
-							</p>
-							<p>
-								Temukan talent berbakat & terbaik di berbagai bidang keahlian
+								<span className='py-1 px-2 bg-pw-purple text-white rounded-lg'>Recruiter</span>
+								 {' '}Register
 							</p>
 						</div>
 
