@@ -88,7 +88,7 @@ export default function Login(props) {
 					</Link>
 
 					<div className='mx-auto p-10 w-5/6'>
-						<p className=' items-center align-center text-5xl font-semibold text-white leading-normal'>
+						<p className=' items-center align-center text-[3vw] font-semibold text-white leading-normal'>
 							Temukan talent berbakat & terbaik di berbagai bidang keahlian
 						</p>
 					</div>
@@ -104,16 +104,14 @@ export default function Login(props) {
 
 
 					{/* login title */}
-					<div className='flex flex-col gap-6 max-sm:text-center'>
-
-						<p className='text-3xl font-semibold text-pw-purple max-sm:leading-[3.4rem]'>
-							Login As <span className='p-2 bg-pw-purple text-white rounded-full'>Recruiter</span>
-						</p>
-
-						<p>
-							Temukan talent berbakat & terbaik di berbagai bidang keahlian
-						</p>
-					</div>
+					<div className='flex flex-col gap-5 mt-5 text-center'>
+							<p className='text-4xl font-semibold text-pw-purple max-sm:leading-[3.8rem]'>
+								Login as <span className='py-1 px-2 bg-pw-purple text-white rounded-lg'>Recruiter</span>
+							</p>
+							<p>
+								Temukan talent berbakat & terbaik di berbagai bidang keahlian
+							</p>
+						</div>
 
 					<div className='w-full rounded-md bg-red-200 p-3' hidden={inputErr === undefined && authErr === undefined}>
 						{
