@@ -37,12 +37,12 @@ export default function Notice() {
 				<div className='h-[40vh] w-full bg-transparent absolute z-[0]'></div>
 			</div>
 
-			<div className='container grid grid-cols-2 mx-auto my-32 max-md:mt-10'>
+			<div className='container grid grid-cols-2 mx-auto my-28 max-md:mt-10'>
 				<div className='max-lg:col-span-2 col-span-1 items-center self-center'>
 					<Player
 						autoplay
 						loop
-						src="https://lottie.host/971edd25-231b-48f8-9b6c-de46ab75c858/C4vmSN6HRl.json"
+						src="https://lottie.host/35b7fc6f-d2fc-4d4d-b847-13fdc9e5abb3/a4ud3URfns.json"
 						style={{ height: '100%', width: '100%' }}>
 					</Player>
 				</div>
