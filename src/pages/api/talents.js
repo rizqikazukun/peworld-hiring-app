@@ -29,24 +29,10 @@ const db = [
         "desc": "It's a tickitz frontend. learning base project from pijarcamp. This a movie cinema ticketing app, you can see current month movie show, and upcoming movie on next month. also this project was integrating with midtrans payment gateway on sandbox environment.",
       },
       {
-        "name": "Tickitz Web Backend ",
-        "image": "",
-        "link": "",
-        "tech_stack": ["NodeJS", "Postgres", "ExpressJS"],
-        "desc":"It's a tickitz backend. learning base project from pijarcamp. This a movie cinema ticketing app, you can see current month movie show, and upcoming movie on next month. also this project was integrating with midtrans payment gateway on sandbox environment.",
-      },
-      {
         "name": "Recipe Web Frontend ",
         "image": "https://res.cloudinary.com/owncloudinarycdn/image/upload/v1700376631/recipe_sxga3k.png",
         "link": "https://recipes-web-fe.vercel.app",
         "tech_stack": ["React", "Bootstrap"],
-        "desc": "'Mama Recipe' is a culinary application that aims to help users find the best food recipes from all over Indonesia. This app offers thousands of recipes, cooking guides, and more. We want to provide an easier and more enjoyable cooking experience.",
-      },
-      {
-        "name": "Recipe Web Backend ",
-        "image": "",
-        "link": "",
-        "tech_stack": ["NodeJS", "Postgres", "ExpressJS"],
         "desc": "'Mama Recipe' is a culinary application that aims to help users find the best food recipes from all over Indonesia. This app offers thousands of recipes, cooking guides, and more. We want to provide an easier and more enjoyable cooking experience.",
       },
       {
@@ -55,6 +41,20 @@ const db = [
         "link": "https://peworld-hiring-app.vercel.app",
         "tech_stack": ["React", "NextJS", "Tailwind"],
         "desc": "This repo contains a react project with next framework. The project itself is about a talent hiring app for recruiters. feel free to see.",
+      },
+      {
+        "name": "Tickitz Web Backend ",
+        "image": "",
+        "link": "",
+        "tech_stack": ["NodeJS", "Postgres", "ExpressJS"],
+        "desc":"It's a tickitz backend. learning base project from pijarcamp. This a movie cinema ticketing app, you can see current month movie show, and upcoming movie on next month. also this project was integrating with midtrans payment gateway on sandbox environment.",
+      },
+      {
+        "name": "Recipe Web Backend ",
+        "image": "",
+        "link": "",
+        "tech_stack": ["NodeJS", "Postgres", "ExpressJS"],
+        "desc": "'Mama Recipe' is a culinary application that aims to help users find the best food recipes from all over Indonesia. This app offers thousands of recipes, cooking guides, and more. We want to provide an easier and more enjoyable cooking experience.",
       },],
     "experiences": [
       {
