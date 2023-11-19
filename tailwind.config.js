@@ -24,7 +24,8 @@ module.exports = {
         'pw-gray5': '#F6F7F8',
         'pw-white': '#F6F7F8',
         'pw-white-hover' : '#ebebeb',
-        'pw-black': '#1F2A36'
+        'pw-black': '#1F2A36',
+        'pw-loading': '#ffffffd9'
       }
     },
   },
