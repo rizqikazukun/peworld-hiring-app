@@ -7,7 +7,7 @@ import E404 from '@/components/E404'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Loading from '@/components/Loading'
-
+import E4042 from '@/components/E4042'
 
 const poppins = Poppins({ subsets: ['latin'], weight: '400' })
 
@@ -39,7 +39,7 @@ export default function TalentDetail(props) {
 				</title>
 			</Head>
 
-			<Loading trigger={loading}/>
+			<Loading trigger={loading} />
 
 			<Navbar />
 
@@ -131,10 +131,51 @@ export default function TalentDetail(props) {
 
 						</div>
 
-						<div className='max-lg:col-span-6 col-span-4 bg-white p-10 m-5 rounded-xl shadow-xl z-10 flex justify-center items-center'>
-							<p className='text-2xl text-pw-purple font-bold text-center'>
-								Sorry, No content available for now.
-							</p>
+						<div className='max-lg:col-span-6 col-span-4 bg-white p-10 m-5 rounded-xl shadow-xl z-10'>
+							<div className='w-full flex p-2 m-2'>
+								<p className='font-bold text-pw-purple text-2xl'>
+									Portfolio
+								</p>
+							</div>
+
+							<div className='flex flex-wrap'>
+								{
+									detail?.portfolio === undefined ?
+										<div className='flex mx-auto p-6 max-w-[420px]'>
+											<E4042 message='Sorry, it seems the user has not updated their portfolio.' className='text-center' />
+										</div> :
+										detail?.portfolio.map((project, index) => {
+											return (
+												<a key={index} className='w-[30%] bg-white m-2 shadow border border-pw-gray10 rounded-xl flex flex-col items-center gap-5 justify-between p-4 h-fit' href={project.link} target='blank'>
+
+													<div className=''>
+														<img
+															className='max-w-[100%] rounded-lg'
+															src={project.image || "https://academy.alterra.id/blog/wp-content/uploads/2022/02/1904.i402.011_Web-development-isometric-concept-infographics-2048x1475.jpg"} 
+															alt={`Project ${project.name}`} />
+													</div>
+
+													<div className='flex'>
+														{
+															project.tech_stack.map((stack, index) => {
+																return (
+																	<span key={index}
+																		className='p-1 m-1 shadow rounded-md text-pw-gray40 text-sm font-semibold'>
+																		{stack}
+																	</span>
+																)
+															})
+														}
+													</div>
+
+													<p className='text-center'>{project.name}</p>
+
+												</a>
+											)
+										})
+
+								}
+							</div>
 						</div>
 
 					</div>
