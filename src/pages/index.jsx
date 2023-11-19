@@ -5,10 +5,14 @@ import { Poppins } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import Loading from '@/components/Loading'
 
 const poppins = Poppins({ subsets: ['latin'], weight: '400' })
 
 export default function Home() {
+  const [loading, setLoading] = React.useState(false)
+  const router = useRouter()
 
   return (
     <div id='page-home' className={poppins.className}>
@@ -28,20 +32,26 @@ export default function Home() {
         <section id='hero-section' className='scroll-helper grid grid-cols-2 max-md:grid-cols-1 mb-16 max-md:mt-24 mt-36'>
           <div className='flex items-center justify-self-center max-lg:items-center max-md:w-[80vw] lg:max-w-[50vw] xl:max-w-[28vw] p-3'>
             <div className=''>
+              
               <h1 className=' max-sm:text-[5.5vw] max-md:text-[5vw] text-[33px] font-bold'>
                 Talenta terbaik negri untuk perubahan revolusi 4.0
               </h1>
+
               <p className='my-5'>
                 Untuk Recruiter, Recruit talenta terbaik sesuai dengan kebutuhan industri.
                 Untuk Talent, ayo bergabung dan menjadi yang talenta terbaik bagi negeri.
               </p>
+
               <div className='flex gap-2'>
 
-                <Link href='/talents'>
-                  <button className='rounded-md  font-bold p-3 bg-pw-orange hover:bg-pw-orange-hover text-pw-white'>
-                    Mulai Sekarang
-                  </button>
-                </Link>
+                <button className='rounded-md  font-bold p-3 bg-pw-orange hover:bg-pw-orange-hover text-pw-white'
+                  onClick={() => {
+                    setLoading(true)
+                    router.push('/talents')
+                  }}>
+                  Mulai Sekarang
+                </button>
+
               </div>
             </div>
           </div>
@@ -141,22 +151,33 @@ export default function Home() {
         rounded-tl-[40px] rounded-tr-[10px] rounded-br-[40px] rounded-bl-[10px] max-sm:justify-center'>
 
           <div className='flex'>
+
             <p className='max-sm:text-[5.5vw] max-md:text-[5vw] text-[33px] font-bold text-white'>
               Tanpa Ragu, <br />
               Mulai Sekarang.
             </p>
+
           </div>
+
           <div className='flex justify-center items-center max-sm:my-3 w-auto max-sm:items-center'>
-            <Link href='/talents'>
-              <button className=' bg-white p-4 rounded-lg hover:bg-pw-white-hover'>
-                <span className='text-pw-purple font-bold'>Mulai Sekarang</span>
-              </button>
-            </Link>
+
+            <button className=' bg-white p-4 rounded-lg hover:bg-pw-white-hover'
+              onClick={() => {
+                setLoading(true)
+                router.push('/talents')
+              }}>
+              <span className='text-pw-purple font-bold'>Mulai Sekarang</span>
+            </button>
+
           </div>
+
         </section>
         {/* End of CTA */}
 
       </main>
+
+      {/* Loading Animation */}
+      <Loading trigger={loading} />
 
       <Footer />
 
