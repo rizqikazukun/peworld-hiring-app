@@ -9,6 +9,7 @@ import { useRouter } from 'next/router'
 import { useSearchParams } from 'next/navigation'
 import E404 from '@/components/E404'
 import E4042 from '@/components/E4042'
+import Loading from '@/components/Loading'
 const poppins = Poppins({ subsets: ['latin'], weight: '400' })
 
 const pageInfo = {
@@ -29,6 +30,8 @@ export default function TalentList(props) {
 	const [search, setSearch] = React.useState(searchParams.get('search') || '')
 	const [talentList, setTalentList] = React.useState([])
 	const [searchFilter, setSearchFilter] = React.useState(false)
+
+	const [loading, setLoading] = React.useState(false)
 
 	const createQueryString = React.useCallback(
 		(name, value) => {
@@ -97,7 +100,8 @@ export default function TalentList(props) {
 
 	return (
 		<div id='page-talentList' className={poppins.className}>
-			<Navbar/>
+			<Loading trigger={loading} />
+			<Navbar />
 			<Head>
 				<title>
 					{
@@ -184,7 +188,7 @@ export default function TalentList(props) {
 										<option value="name">name</option>
 									</select>
 								</div>
-								
+
 								<div className='flex flex-col justify-center gap-2'>
 									<p>Count data :</p>
 									<select name="" id="" className='bg-white rounded-full focus:border-none'
@@ -243,11 +247,15 @@ export default function TalentList(props) {
 												</div>
 
 												<p>Action :</p>
-												<Link className=' w-fit' href={`talents/${talent.user_uid}`}>
-													<button className='bg-pw-purple hover:bg-pw-purple-hover text-white rounded font-medium py-2 px-3 shadow'>
-														Lihat Detail
-													</button>
-												</Link>
+
+												<button className='bg-pw-purple hover:bg-pw-purple-hover text-white rounded 
+																	font-medium py-2 px-3 shadow'
+													onClick={() => {
+														setLoading(true)
+														router.push(`talents/${talent.user_uid}`) }}>
+													Lihat Detail
+												</button>
+
 
 											</div>
 											<div className=' col-span-4'>
