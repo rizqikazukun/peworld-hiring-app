@@ -158,10 +158,10 @@ export default function Register(props) {
 
 						{/* Register Form */}
 						<InputText id='name' labelName='Full Name' onChange={e => setFullname(e.target.value)} />
-						<InputEmail onChange={e => setEmail(e.target.value)} />
 						<InputText id='company' labelName='Company Name' onChange={e => setCompany(e.target.value)} />
 						<InputText id='position' labelName='Position' onChange={e => setJobTitle(e.target.value)} />
 						<InputText id='phone' labelName='Phone Number' onChange={e => setPhone(e.target.value)} />
+						<InputEmail onChange={e => setEmail(e.target.value)} />
 						<InputPassword onChange={e => setPassword(e.target.value)} />
 
 						{
