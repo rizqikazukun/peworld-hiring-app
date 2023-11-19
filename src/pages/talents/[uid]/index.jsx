@@ -98,20 +98,28 @@ export default function TalentDetail(props) {
 										const [key, value] = item
 
 										let Lable
+										let link
 										if (key === 'instagram') {
+											link = 'https://www.instagram.com/'
 											Lable = <span><img className='inline h-[20px]' src="/assets/icons/instagram.svg" alt="instagram" /> Instagram </span>
 										} else if (key === 'github') {
+											link = 'https://github.com/'
 											Lable = <span><img className='inline h-[20px]' src="/assets/icons/github.svg" alt="github" /> Github </span>
 										} else if (key === 'gitlab') {
+											link = 'https://gitlab.com/'
 											Lable = <span><img className='inline h-[20px]' src="/assets/icons/gitlab.svg" alt="gitlab" /> Gitlab </span>
 										} else if (key === 'email') {
+											link = 'mailto:'
 											Lable = <span><img className='inline h-[20px]' src="/assets/icons/email.svg" alt="email" /> Email </span>
 										} else {
+											link = ''
 											Lable = <span><img className='inline h-[20px]' src="/assets/icons/other.svg" alt={key} /> {key} </span>
 										}
 
 										return (
-											<p key={index} className='text-sm text-pw-gray60'>{Lable}{`: ${value} `}</p>
+											<a key={index} href={link + value} target={key === 'email' ? '' : 'blank'}>
+												<p className='text-sm text-pw-gray60'>{Lable}{`: ${value} `}</p>
+											</a>
 										)
 									})
 								}
@@ -151,7 +159,7 @@ export default function TalentDetail(props) {
 													<div className=''>
 														<img
 															className='max-w-[100%] rounded-lg'
-															src={project.image || "https://academy.alterra.id/blog/wp-content/uploads/2022/02/1904.i402.011_Web-development-isometric-concept-infographics-2048x1475.jpg"} 
+															src={project.image || "https://academy.alterra.id/blog/wp-content/uploads/2022/02/1904.i402.011_Web-development-isometric-concept-infographics-2048x1475.jpg"}
 															alt={`Project ${project.name}`} />
 													</div>
 
