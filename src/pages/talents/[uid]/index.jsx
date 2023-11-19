@@ -154,7 +154,7 @@ export default function TalentDetail(props) {
 										</div> :
 										detail?.portfolio.map((project, index) => {
 											return (
-												<a key={index} className='w-[30%] bg-white m-2 shadow border border-pw-gray10 rounded-xl flex flex-col items-center gap-5 justify-between p-4 h-fit' href={project.link} target='blank'>
+												<a key={index} className=' max-sm:w-full w-[30%] bg-white m-2 shadow border border-pw-gray10 rounded-xl flex flex-col items-center gap-5 justify-between p-4 h-fit flex-grow' href={project.link} target='blank'>
 
 													<div className=''>
 														<img
@@ -163,7 +163,7 @@ export default function TalentDetail(props) {
 															alt={`Project ${project.name}`} />
 													</div>
 
-													<div className='flex'>
+													<div className='flex flex-wrap justify-center'>
 														{
 															project.tech_stack.map((stack, index) => {
 																return (
