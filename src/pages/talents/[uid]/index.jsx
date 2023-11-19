@@ -6,6 +6,7 @@ import { Poppins } from 'next/font/google'
 import E404 from '@/components/E404'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
+import Loading from '@/components/Loading'
 
 
 const poppins = Poppins({ subsets: ['latin'], weight: '400' })
@@ -13,6 +14,7 @@ const poppins = Poppins({ subsets: ['latin'], weight: '400' })
 
 export default function TalentDetail(props) {
 	const [detail, setDetail] = React.useState({})
+	const [loading, setLoading] = React.useState(false)
 	const router = useRouter()
 
 	console.log(props)
@@ -36,6 +38,8 @@ export default function TalentDetail(props) {
 					{props.data.data.fullname} | Peworld
 				</title>
 			</Head>
+
+			<Loading trigger={loading}/>
 
 			<Navbar />
 
@@ -66,6 +70,7 @@ export default function TalentDetail(props) {
 
 							<button id='button-hire' className='bg-pw-purple hover:bg-pw-purple-hover text-white rounded font-semibold py-2 shadow-md'
 								onClick={() => {
+									setLoading(true)
 									router.push(`/talents/${detail.user_uid}/hire`)
 								}}>
 								Hire

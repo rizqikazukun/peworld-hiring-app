@@ -8,11 +8,12 @@ import Head from 'next/head'
 import { getCookie, hasCookie } from 'cookies-next'
 import { Player } from '@lottiefiles/react-lottie-player'
 import { useRouter } from 'next/router'
+import Loading from '@/components/Loading'
 
 const poppins = Poppins({ subsets: ['latin'], weight: '400' })
 
 export default function Notice() {
-
+	const [loading, setLoading] = React.useState(false)
 	const router = useRouter()
 
 	React.useEffect(() => {
@@ -27,6 +28,8 @@ export default function Notice() {
 					Notice | Peworld
 				</title>
 			</Head>
+
+			<Loading trigger={loading}/>
 
 			<Navbar />
 
@@ -54,12 +57,18 @@ export default function Notice() {
 						<div className='flex gap-2'>
 
 							<button className='w-[128px] rounded-full px-1 h-10 bg-transparent hover:bg-[#d5d5d5] border-pw-purple border-2'
-								onClick={() => router.push('/login')} >
+								onClick={() => {
+									setLoading(true)
+									router.push('/login')
+								}} >
 								<span className=' text-pw-purple font-semibold'>Login</span>
 							</button>
 
 							<button className='w-[128px] rounded-full px-1 h-10 bg-pw-purple hover:bg-pw-purple-hover border-pw-purple border-2' 
-							onClick={() => router.push('/register')} >
+							onClick={() => {
+								setLoading(true)
+								router.push('/register')
+							}} >
 								<span className=' text-white font-semibold'>Register</span>
 							</button>
 
