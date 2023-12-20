@@ -8,7 +8,7 @@ For more Peworld is a hiring app that connects recruiters and job seekers in the
 
 Developer : Rizqi Pratama  
 Tech Stack : Javascript, React, NextJS, Tailwind, SASS  
-Preview : <https://tickitz-app.vercel.app>
+Preview : <https://peworld-hiring-app.vercel.app>
 
 > Note: Because of limitation from backend cloud provider, the page data is slow to load.  
 > Sorry for the inconvenience.
@@ -20,6 +20,7 @@ Preview : <https://tickitz-app.vercel.app>
 	- [Screenshoot](#screenshoot)
 	- [How to run](#how-to-run)
 	- [Commit Message Status](#commit-message-status)
+	- [Releated Project](#releated-project)
 
 ## Screenshoot
 
@@ -47,3 +48,7 @@ npm run start
  🔷 | Changing something
  ❌ | Removing something
  🚩 | Fixing Something
+
+## Releated Project
+
+[Peworld Demo](https://peworld-hiring-app.vercel.app)
